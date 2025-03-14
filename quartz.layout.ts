@@ -1,11 +1,12 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { MathjaxConfig } from "./quartz/components/scripts/mathjax-config"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [MathjaxConfig],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",

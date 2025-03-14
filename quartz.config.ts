@@ -1,5 +1,7 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+// 导入自定义工具函数
+import { getMathJaxMacrosFromPreamble } from "./quartz/util/mathjax-utils"
 
 /**
  * Quartz 4 Configuration
@@ -71,7 +73,13 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
-      Plugin.Latex({ renderEngine: "mathjax" }),
+      Plugin.Latex({ 
+        renderEngine: "mathjax",
+        // 自定义宏应在这里设置，这是自定义LaTeX宏
+        customMacros: getMathJaxMacrosFromPreamble()
+        // 注意：rehype-mathjax不支持直接在插件配置中指定加载物理包
+        // 我们将通过自定义MathJax脚本来实现这一点
+      }),
       Plugin.HardLineBreaks(),
     ],
     filters: [Plugin.RemoveDrafts()],
