@@ -5,7 +5,8 @@ tags:
   - github
   - application
   - docker
-categories: 
+categories:
+  - 技术
 series: 
 commets: false
 share: true
