@@ -7,3 +7,16 @@ img {
     margin-right: auto;
 }
 
+.math-display, 
+mjx-container[jax="CHTML"][display="true"] {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+}
+
+// 确保行内公式保持在文本行内
+.math-inline,
+mjx-container[jax="CHTML"]:not([display="true"]) {
+    display: inline-flex !important; // 使用 inline-flex 而不是 inline
+    vertical-align: middle; // 确保与文本行对齐
+}
