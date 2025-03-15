@@ -6,25 +6,3 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
-
-mjx-container.MathJax[jax="SVG"][display="true"] {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100%;
-    margin: 1em 0 !important;
-}
-
-// 针对可能的 CHTML 渲染引擎
-mjx-container.MathJax[jax="CHTML"][display="true"] {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100%;
-    margin: 1em 0 !important;
-}
-
-// 通用选择器，以防其他类名
-.math-display {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100%;
-}

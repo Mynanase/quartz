@@ -77,7 +77,7 @@ const config: QuartzConfig = {
           tex: {
             packages: {'[+]': ['physics']}
           },
-          chtml: {
+          svg:{
             displayAlign: 'center'
           }
         },
