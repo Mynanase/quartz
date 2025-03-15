@@ -81,6 +81,9 @@ const config: QuartzConfig = {
             displayAlign: 'center'
           }
         },
+        customMacros: {
+          "\\R": "\\mathbb{R}",
+        },
       }),
       Plugin.HardLineBreaks(),
     ],
