@@ -6,3 +6,12 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+# mathjax
+mjx-container.MathJax[jax="SVG"][display="true"] {
+    display: flex ;
+    justify-content: center ;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
