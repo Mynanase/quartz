@@ -76,6 +76,9 @@ const config: QuartzConfig = {
         mathJaxOptions: {
           tex: {
             packages: {'[+]': ['physics']}
+          },
+          chtml: {
+            displayAlign: 'center'
           }
         },
       }),
