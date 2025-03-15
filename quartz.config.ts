@@ -79,7 +79,7 @@ const config: QuartzConfig = {
           }
         },
         customMacros: {
-          "\\R": "\\mathbb{R}",
+          "\\R": "\\mathbb{R}"
         },
       }),
       Plugin.HardLineBreaks(),
