@@ -7,16 +7,24 @@ img {
     margin-right: auto;
 }
 
-.math-display, 
-mjx-container[jax="CHTML"][display="true"] {
+mjx-container.MathJax[jax="SVG"][display="true"] {
     display: flex !important;
     justify-content: center !important;
     width: 100%;
+    margin: 1em 0 !important;
 }
 
-// 确保行内公式保持在文本行内
-.math-inline,
-mjx-container[jax="CHTML"]:not([display="true"]) {
-    display: inline-flex !important; // 使用 inline-flex 而不是 inline
-    vertical-align: middle; // 确保与文本行对齐
+// 针对可能的 CHTML 渲染引擎
+mjx-container.MathJax[jax="CHTML"][display="true"] {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    margin: 1em 0 !important;
+}
+
+// 通用选择器，以防其他类名
+.math-display {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
 }
