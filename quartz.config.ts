@@ -75,6 +75,11 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ 
         renderEngine: "mathjax",
+        mathJaxOptions: {
+          tex: {
+            packages: {'[+]': ['physics']}
+          }
+        },
         // 自定义宏应在这里设置，这是自定义LaTeX宏
         customMacros: getMathJaxMacrosFromPreamble()
         // 注意：rehype-mathjax不支持直接在插件配置中指定加载物理包
