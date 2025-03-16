@@ -24,7 +24,7 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         header: "Schibsted Grotesk",
-        body: "LXGWNeoZhiSong",
+        body: "LXGW NeoZhiSong",
         code: "Sarasa Mono SC Nerd Font",
       },
       colors: {
