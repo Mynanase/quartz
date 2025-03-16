@@ -34,7 +34,7 @@ Plugin.Latex({
 - physics
 - configmacros：用于之后自定义宏
 成功加载 physics 的测试
-```math
+```latex
 \curl \vb{B} = \mu_0 \vb{J} + \mu_0\epsilon_0\pdv{\vb{E}{t}}
 ```
 $$
