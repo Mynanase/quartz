@@ -19,9 +19,25 @@ updated: 2025-03-16T03:45:10+00:00
 - 加载自定义宏
 - 设置行间公式居中
 ## 添加包
-在 `quartz.`
-
-
+在 `quartz.config.ts` 的 tex 设置中添加：
+```ts
+Plugin.Latex({ 
+		renderEngine: "mathjax",
+		mathJaxOptions: {
+		  tex: {
+			packages: {'[+]': ['physics', 'configmacros']},
+		  }
+		},
+	})
+```
+我所使用的包有
+- physics
+- configmacros：用于之后自定义宏
+成功加载 physics 的测试
+```math
+\curl \vb{B} = \mu_0 \vb{J} + \mu_0\epsilon_0\pdv{\vb{E}{t}}
+```
+$$
+\curl \vb{B} = \mu_0 \vb{J} + \mu_0\epsilon_0\pdv{\vb{E}}{t}
+$$
 ## 自定义宏测试
-- `\R`：$\RR$，$\R$, $\mathbb{R}$, ${\bf x}$
-- 
