@@ -71,5 +71,19 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 
 # 外观
 ## 使用自定义字体
-- 正文：`QiushuiShotai`or `LXGW Neo ZhiSong`
-- 代码块：`Saras`
+- 正文：`QiushuiShotai` or `LXGW Neo ZhiSong`
+- 代码块：`Sarasa Mono SC Nerd Font`
+- 数学字体：
+css 代码
+```css
+中文使用方法
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v19/-F63fjptAgt5VM-kVkqdyU8n1iIq129k.woff2) format('woff2');
+}
+
+```
+
