@@ -42,7 +42,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
     font-family: "Symbols Nerd Font Mono", "LXGW Neo XiHei";
     
     // Font size
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 
     // Letter spacing
     letter-spacing: 0.02em;
@@ -59,3 +59,17 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
       color: var(--tertiary);
     }
   }
+
+/* Adjust overall font size for recent notes section */
+.recent-notes {
+  font-size: 0.9rem; /* Set base font size for the entire component */
+
+  li .section > .meta {
+    font-family: "Symbols Nerd Font Mono", "LXGW Neo XiHei"; /* Change the font family */
+    font-size: 0.9rem; /* Adjust font size */
+    // color: #666; /* Change text color */
+    // font-style: italic; /* Make it italic if desired */
+    // font-weight: 300; /* Lighter font weight */
+    /* Add any other font-related properties you want to modify */
+  }
+}
