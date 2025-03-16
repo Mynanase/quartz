@@ -1,10 +1,8 @@
 // Import base styles
 @use "./base.scss";
 
-// Import fonts directly from CDN
-@import url("https://chinese-fonts-cdn.deno.dev/packages/LxgwNeoZhiSong/dist/LXGWNeoZhiSong/result.css");
-@import url("https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css");
-@import url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/sarasa-mono-sc-regular-nerd-font/result.css");
+// Import custom fonts from separate file
+@import "./local.google.fonts.css";
 
 // put your custom CSS here!
 img {
@@ -20,11 +18,4 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-}
-
-// Apply the fonts
-:root {
-  --font-body: 'LXGW Neo ZhiSong', sans-serif;
-  --font-header: 'LXGW Neo ZhiSong', sans-serif;
-  --font-mono: 'Maple Mono', 'Sarasa Mono SC Nerd Font', monospace;
 }

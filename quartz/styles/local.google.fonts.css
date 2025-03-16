@@ -1,24 +1,4 @@
-@font-face {
-    font-family: 'LXGW Neo ZhiSong';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("https://chinese-fonts-cdn.deno.dev/packages/LxgwNeoZhiSong/dist/LXGWNeoZhiSong/result.css");
-    }
-
-@font-face {
-    font-family: 'Maple Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css");
-    }
-
-@font-face {
-    font-family: 'Sarasa Mono SC Nerd Font';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/sarasa-mono-sc-regular-nerd-font/result.css");
-}
-
+/* 导入中文字体 */
+@import url("https://chinese-fonts-cdn.deno.dev/packages/LxgwNeoZhiSong/dist/LXGWNeoZhiSong/result.css");
+@import url("https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css");
+@import url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/sarasa-mono-sc-regular-nerd-font/result.css");
