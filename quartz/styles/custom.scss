@@ -1,6 +1,6 @@
 // Import custom fonts from separate file
-@use "./base.scss";
 @use "./local.google.fonts.css";
+@use "./base.scss";
 
 :root {
     --bodyFont: 'LXGW Neo ZhiSong', sans-serif !important;
