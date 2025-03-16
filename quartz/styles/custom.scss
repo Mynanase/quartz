@@ -17,6 +17,12 @@
     font-style: normal;
     font-display:swap;
 }
+@font-face {
+    font-family: "Iosevka Nerd Font";
+    src: url('../static/fonts/IosevkaNerdFont-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-display:swap;
+}
 
 // :root {
 //     --codeFont: "Sarasa Mono SC Nerd Font" !important;
@@ -39,7 +45,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 
 .content-meta {
     // Font family
-    font-family: "Symbols Nerd Font Mono", "LXGW Neo XiHei";
+    font-family: "Iosevka Nerd Font", "LXGW Neo XiHei";
     
     // Font size
     font-size: 0.8rem;
@@ -65,8 +71,8 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
   font-size: 0.9rem; /* Set base font size for the entire component */
 
   li .section > .meta {
-    font-family: "Symbols Nerd Font Mono", "LXGW Neo XiHei"; /* Change the font family */
-    font-size: 0.9rem; /* Adjust font size */
+    font-family: "Iosevka Nerd Font", "LXGW Neo XiHei"; /* Change the font family */
+    font-size: 0.8rem; /* Adjust font size */
     // color: #666; /* Change text color */
     // font-style: italic; /* Make it italic if desired */
     // font-weight: 300; /* Lighter font weight */
