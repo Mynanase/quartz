@@ -1,9 +1,6 @@
-// @use must come first in SCSS files
+// Import base styles and fonts
 @use "./base.scss";
-
-// Then @import rules
-@import url('https://chinese-fonts-cdn.deno.dev/packages/LxgwNeoZhiSong/dist/LXGWNeoZhiSong/result.css');
-@import url('https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css');
+@use "./fonts.scss";
 
 // Apply the font to the site
 :root {
