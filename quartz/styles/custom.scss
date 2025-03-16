@@ -1,7 +1,8 @@
 // Import base styles and fonts
 @use "./base.scss";
 
-@import("https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css");
+@import "https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css";
+
 
 // Apply the font to the site
 :root {
