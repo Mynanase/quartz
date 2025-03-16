@@ -252,20 +252,12 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
       // that everyone else had the chance to register a listener for it
       addGlobalPageResources(ctx, componentResources)
 
-      // const stylesheet = joinStyles(
-      //   // ctx.cfg.configuration.theme,
-      //   googleFontsStyleSheet,
-      //   ...componentResources.css,
-      //   styles,
-      // )
-
-      const stylesParts: string[] = []
-      if (googleFontsStyleSheet) {
-        stylesParts.push(googleFontsStyleSheet)
-      }
-      stylesParts.push(...componentResources.css)
-      stylesParts.push(styles)
-      const stylesheet = stylesParts.join("\n")
+      const stylesheet = joinStyles(
+        ctx.cfg.configuration.theme,
+        googleFontsStyleSheet,
+        ...componentResources.css,
+        styles,
+      )
 
       const [prescript, postscript] = await Promise.all([
         joinScripts(componentResources.beforeDOMLoaded),
