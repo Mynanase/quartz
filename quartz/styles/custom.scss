@@ -1,8 +1,14 @@
 @use "./base.scss";
 // put your custom CSS here!
 
+@import url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/sarasa-mono-sc-regular-nerd-font/result.css");
+
+:root {
+    --codeFont: "Sarasa Mono SC Nerd Font" !important;
+}
+
 // Import custom fonts from separate file
-@use "./local.google.fonts.css";
+// @use "./local.google.fonts.css";
 
 img {
     display: block;
