@@ -1,8 +1,6 @@
 // Import custom fonts from separate file
-@import "./local.google.fonts.css";
-
-// Import base styles
 @use "./base.scss";
+@use "local.google.fonts.css";
 
 // put your custom CSS here!
 img {
