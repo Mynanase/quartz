@@ -1,3 +1,16 @@
 /* 导入中文字体 */
-@import url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/LXGWNeoZhiSong/result.css");
-@import url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/sarasa-mono-sc-regular-nerd-font/result.css");
+@font-face {
+    font-family: "LXGW Neo Zhi Song";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/LXGWNeoZhiSong.woff2") format("woff2");
+  };
+
+@font-face {
+    font-family: "Sarasa Mono SC Nerd Font";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/sarasa-mono-sc-regular-nerd-font.woff2") format("woff2");
+};

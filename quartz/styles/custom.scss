@@ -1,22 +1,6 @@
 // Import custom fonts from separate file
 @use "./base.scss";
-
-@font-face {
-    font-family: "LXGW Neo Zhi Song";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/LXGWNeoZhiSong.woff2) format("woff2");
-  };
-
-@font-face {
-    font-family: "Sarasa Mono SC Nerd Font";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/sarasa-mono-sc-regular-nerd-font.woff2) format("woff2");
-};
-
+@use "./local.google.fonts.scss";
 
 // put your custom CSS here!
 img {
