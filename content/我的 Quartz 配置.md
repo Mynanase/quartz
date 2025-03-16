@@ -40,4 +40,31 @@ Plugin.Latex({
 $$
 \curl \vb{B} = \mu_0 \vb{J} + \mu_0\epsilon_0\pdv{\vb{E}}{t}
 $$
-## 自定义宏测试
+## 自定义宏
+需要按照上述步骤配置好 `configmacros`，然后添加
+```ts
+tex: {
+	packages: {'[+]': ['physics', 'configmacros']},
+	macros: {
+	  RR: "{\\bf R}",
+	}
+```
+自定义宏测试
+```latex
+\RR
+```
+$$
+\RR
+$$
+## 公式居中显示
+修改 `quartz/styles/custom.scss`，添加
+```scss
+// mathjax
+mjx-container.MathJax[jax="SVG"][display="true"] {
+    display: flex ;
+    justify-content: center ;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+```
