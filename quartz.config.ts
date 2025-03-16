@@ -75,11 +75,11 @@ const config: QuartzConfig = {
         renderEngine: "mathjax",
         mathJaxOptions: {
           tex: {
-            packages: {'[+]': ['physics']}
+            packages: {'[+]': ['physics']},
+            macros: {
+              "\\R": "\\mathbb{R}"
+            }
           }
-        },
-        customMacros: {
-          "\\R": "\\mathbb{R}"
         },
       }),
       Plugin.HardLineBreaks(),
