@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'LXGW Neo ZhiSong';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://chinese-fonts-cdn.deno.dev/packages/LxgwNeoZhiSong/dist/LXGWNeoZhiSong/result.css");
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+@font-face {
+    font-family: 'Maple Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css");
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    
+@font-face {
+    font-family: 'Sarasa Mono SC Nerd Font';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://fonts-1317142608.cos.ap-nanjing.myqcloud.com/sarasa-mono-sc-regular-nerd-font/result.css");
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
