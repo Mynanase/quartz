@@ -120,7 +120,20 @@ export async function processGoogleFonts(
   return { processedStylesheet, fontFiles }
 }
 
+// Helper function to properly format font families
+function formatFontFamily(fontStr: string): string {
+  // Split by commas, trim whitespace, and wrap any font name with spaces in quotes
+  return fontStr.split(',')
+    .map(font => font.trim())
+    .map(font => font.includes(' ') && !font.includes('"') && !font.includes("'") ? `"${font}"` : font)
+    .join(', ');
+}
+
 export function joinStyles(theme: Theme, ...stylesheet: string[]) {
+  const headerFont = formatFontFamily(getFontSpecificationName(theme.typography.header));
+  const bodyFont = formatFontFamily(getFontSpecificationName(theme.typography.body));
+  const codeFont = formatFontFamily(getFontSpecificationName(theme.typography.code));
+  
   return `
 ${stylesheet.join("\n\n")}
 
@@ -135,9 +148,9 @@ ${stylesheet.join("\n\n")}
   --highlight: ${theme.colors.lightMode.highlight};
   --textHighlight: ${theme.colors.lightMode.textHighlight};
 
-  --headerFont: "${getFontSpecificationName(theme.typography.header)}", ${DEFAULT_SANS_SERIF};
-  --bodyFont: "${getFontSpecificationName(theme.typography.body)}", ${DEFAULT_SANS_SERIF};
-  --codeFont: "${getFontSpecificationName(theme.typography.code)}", ${DEFAULT_MONO};
+  --headerFont: ${headerFont}, ${DEFAULT_SANS_SERIF};
+  --bodyFont: ${bodyFont}, ${DEFAULT_SANS_SERIF};
+  --codeFont: ${codeFont}, ${DEFAULT_MONO};
 }
 
 :root[saved-theme="dark"] {

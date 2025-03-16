@@ -25,14 +25,7 @@ const config: QuartzConfig = {
       typography: {
         header: "Schibsted Grotesk",
         body: "LXGW Neo ZhiSong",
-        // Option 1: Use a single string with font names
         code: "Iosevka Nerd Font Mono, LXGW Neo XiHei",
-        
-        // Option 2: Use the object form if you need more control over weights
-        // code: {
-        //   name: "Iosevka Nerd Font Mono, LXGW Neo XiHei",
-        //   weights: [400]
-        // },
       },
       colors: {
         lightMode: {
