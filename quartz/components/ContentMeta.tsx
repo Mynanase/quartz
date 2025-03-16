@@ -43,31 +43,20 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         
         // Only show updated date if it's different from creation date
         if (!creationDate || updatedDate.getTime() > creationDate.getTime()) {
+          // Fix: Use type-safe access for the updatedDate property
+          const contentMeta = i18n(cfg.locale).components?.contentMeta
+          const updatedText = cfg.locale && 
+            contentMeta && 'updatedDate' in (contentMeta as any) ? 
+            (contentMeta as any).updatedDate : 
+            "󰚰"
+          
           segments.push(
             <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="update-icon"
-                aria-label="Updated"
-                style={{ marginRight: '4px', verticalAlign: 'middle' }}
-              >
-                <path d="M21 2v6h-6"></path>
-                <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
-                <path d="M3 12a9 9 0 0 0 6.7 15L13 21"></path>
-                <path d="M13 21h6v-6"></path>
-              </svg>{" "}
+              {updatedText}{" "}
               <Date date={updatedDate} locale={cfg.locale} />
             </span>
           )
-        } 
+        }
       }
 
       // Display reading time if enabled
