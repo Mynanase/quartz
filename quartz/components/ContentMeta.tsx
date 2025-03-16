@@ -12,11 +12,13 @@ interface ContentMetaOptions {
    */
   showReadingTime: boolean
   showComma: boolean
+  showUpdated: boolean
 }
 
 const defaultOptions: ContentMetaOptions = {
   showReadingTime: true,
   showComma: true,
+  showUpdated: true,
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
@@ -29,8 +31,30 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     if (text) {
       const segments: (string | JSX.Element)[] = []
 
+      // Add creation date
       if (fileData.dates) {
         segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
+      }
+
+      // Add updated date if available and option enabled
+      if (options.showUpdated && fileData.dates && fileData.dates.updated) {
+        const creationDate = getDate(cfg, fileData)
+        const updatedDate = fileData.dates.updated
+        
+        // Only show updated date if it's different from creation date
+        if (!creationDate || updatedDate.getTime() > creationDate.getTime()) {
+          const updatedText = cfg.locale && 
+            i18n(cfg.locale).components?.contentMeta?.updatedDate ? 
+            i18n(cfg.locale).components.contentMeta.updatedDate : 
+            "更新于"
+          
+          segments.push(
+            <span>
+              {updatedText}{" "}
+              <Date date={updatedDate} locale={cfg.locale} />
+            </span>
+          )
+        }
       }
 
       // Display reading time if enabled

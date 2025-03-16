@@ -39,6 +39,7 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
             let created: MaybeDate = undefined
             let modified: MaybeDate = undefined
             let published: MaybeDate = undefined
+            let updated: MaybeDate = undefined
 
             const fp = file.data.filePath!
             const fullFp = path.isAbsolute(fp) ? fp : path.posix.join(file.cwd, fp)
@@ -51,6 +52,7 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
                 created ||= file.data.frontmatter.created as MaybeDate
                 modified ||= file.data.frontmatter.modified as MaybeDate
                 published ||= file.data.frontmatter.published as MaybeDate
+                updated ||= file.data.frontmatter.updated as MaybeDate
               } else if (source === "git") {
                 if (!repo) {
                   // Get a reference to the main git repo.
@@ -76,6 +78,7 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
               created: coerceDate(fp, created),
               modified: coerceDate(fp, modified),
               published: coerceDate(fp, published),
+              updated: coerceDate(fp, updated),
             }
           }
         },
@@ -90,6 +93,7 @@ declare module "vfile" {
       created: Date
       modified: Date
       published: Date
+      updated: Date
     }
   }
 }
