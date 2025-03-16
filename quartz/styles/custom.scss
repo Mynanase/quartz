@@ -1,8 +1,9 @@
-@use "./base.scss";
-
-// Import font
+// Import font - must come before all other rules
 @import url('https://chinese-fonts-cdn.deno.dev/packages/LxgwNeoZhiSong/dist/LXGWNeoZhiSong/result.css');
 @import url('https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css');
+
+// SCSS module imports come after CSS imports
+@use "./base.scss";
 
 // Apply the font to the site
 :root {
