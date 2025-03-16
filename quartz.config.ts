@@ -25,7 +25,7 @@ const config: QuartzConfig = {
       typography: {
         header: "Schibsted Grotesk",
         body: "LXGW Neo ZhiSong",
-        code: "Sarasa Mono SC Nerd Font",
+        code: "'Iosevka Nerd Font Mono', 'LXGW Neo XiHei'",
       },
       colors: {
         lightMode: {

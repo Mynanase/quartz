@@ -2,6 +2,21 @@
 // put your custom CSS here!
 @use "./fonts/sarasa-mono-sc-regular-nerd-font.css";
 @use "./fonts/LXGWNeoZhiSong.css";
+@use "./fonts/LXGWNeoXiHei.css";
+
+@font-face {
+    font-family: "Symbols Nerd Font Mono";
+    src: url('../static/fonts/SymbolsNerdFont-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: "Iosevka Nerd Font Mono";
+    src: url('../static/fonts/IosevkaNerdFontMono-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-display:swap;
+}
 
 // :root {
 //     --codeFont: "Sarasa Mono SC Nerd Font" !important;
