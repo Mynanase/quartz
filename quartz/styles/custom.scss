@@ -1,5 +1,15 @@
 @use "./base.scss";
 
+// Import font
+@import url('https://chinese-fonts-cdn.deno.dev/packages/LxgwNeoZhiSong/dist/LXGWNeoZhiSong/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css');
+
+// Apply the font to the site
+:root {
+  --font-body: 'LXGW Neo ZhiSong', sans-serif;
+  --font-mono: 'Maple Mono', monospace;
+}
+
 // put your custom CSS here!
 img {
     display: block;
