@@ -68,3 +68,8 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
     margin-right: auto;
 }
 ```
+
+# 外观
+## 使用自定义字体
+- 正文：`QiushuiShotai`or `LXGW Neo ZhiSong`
+- 代码块：`Saras`
