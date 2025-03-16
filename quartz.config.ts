@@ -75,9 +75,10 @@ const config: QuartzConfig = {
         renderEngine: "mathjax",
         mathJaxOptions: {
           tex: {
-            packages: {'[+]': ['physics']},
+            packages: {'[+]': ['physics', 'configmacros']},
             macros: {
               RR: "{\bf R}",
+              "\\R": "{\\mathbb{R}}",
             }
           }
         },
