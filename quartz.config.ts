@@ -77,8 +77,7 @@ const config: QuartzConfig = {
           tex: {
             packages: {'[+]': ['physics', 'configmacros']},
             macros: {
-              RR: "{\bf R}",
-              "\\R": "{\\mathbb{R}}",
+              RR: "{\\bf R}",
             }
           }
         },
