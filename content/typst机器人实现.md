@@ -1,25 +1,24 @@
 ---
 title: typst机器人实现
-date: 2024-06-29T12:52:55+08:00
+filename: 
 tags:
   - bot
   - typst
   - python
   - 计算机技术
 categories: 
-series: 
-commets: false
-share: true
-归档: true
 status:
   - 完成
-description: 
+share: true
 image: 
-date modified: 2024-09-30T14:20:05+08:00
+description: 
+created: 2024-09-30T06:20:05+00:00
+updated: 2025-03-15T17:20:46+00:00
 ---
+
 使用到的技术主要是 `NapCat` 和 `NoneBot`.
 # 配置 NapCat
-## For Window 
+## For Window
 - 安装 NapCat 和相应版本的 NTQQ
 - 运行脚本文件并扫码登录
 ```bash
@@ -212,7 +211,7 @@ nonebot.load_plugin(__name__)
 2. 注意设置 `ppi` 调整图片清晰度
 3. 在该的虚拟环境中安装 typst 方法: 
 
-首先注意到, 先用conda 创建了一虚拟环境, 在虚拟环境下安装了 `nb`, `nb` 创建项目时, 项目文件中又会有一虚拟环境, 该虚拟环境没有 `pip`, 那么需要用 `nb` 所在虚拟环境的 `pip` 来进行安装: 
+首先注意到, 先用 conda 创建了一虚拟环境, 在虚拟环境下安装了 `nb`, `nb` 创建项目时, 项目文件中又会有一虚拟环境, 该虚拟环境没有 `pip`, 那么需要用 `nb` 所在虚拟环境的 `pip` 来进行安装: 
 ```bash
 ## 之前安装的环境 conda create -n nonebot python==3.10
 conda activate nonebot
