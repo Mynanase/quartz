@@ -13,7 +13,7 @@ share: true
 image: 
 description: 
 created: 2024-09-30T06:20:05+00:00
-updated: 2025-03-15T17:20:46+00:00
+updated: 2025-03-08T17:20:46
 ---
 
 使用到的技术主要是 `NapCat` 和 `NoneBot`.
