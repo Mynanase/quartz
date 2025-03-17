@@ -1,5 +1,5 @@
 ---
-title: Home_post
+title: Home
 filename: index
 tags: 
 categories: 
