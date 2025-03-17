@@ -68,7 +68,19 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 
 /* Adjust overall font size for recent notes section */
 .recent-notes {
-  font-size: 0.9rem; /* Set base font size for the entire component */
+  font-size: 0.9rem !important; /* Use !important to override */
+  
+  & > ul.recent-ul {
+    font-size: 0.9rem; /* Apply font size to the list as well */
+    
+    & > li {
+      font-size: 0.9rem; /* Apply font size to list items */
+      
+      .section {
+        font-size: 0.9rem; /* Apply to section elements */
+      }
+    }
+  }
 
   li .section > .meta {
     font-family: "Iosevka Nerd Font", "LXGW Neo XiHei"; /* Change the font family */
