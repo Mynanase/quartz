@@ -2,23 +2,21 @@
 title: typst机器人实现
 filename: 
 tags:
-  - bot
   - typst
   - python
-  - 计算机技术
 categories: 
 status:
-  - 完成
+  - done
 share: true
 image: 
 description: 
 created: 2024-09-30T06:20:05+00:00
-updated: 2025-03-08T17:20:46
+updated: 2025-03-17T00:41:29+00:00
 ---
 
 使用到的技术主要是 `NapCat` 和 `NoneBot`.
-# 配置 NapCat
-## For Window
+## 配置 NapCat
+### For Window
 - 安装 NapCat 和相应版本的 NTQQ
 - 运行脚本文件并扫码登录
 ```bash
@@ -72,9 +70,9 @@ updated: 2025-03-08T17:20:46
 - 重启, 扫码登录, 这时会显示 `reverseWs` 失败, 这是正常的.
 
 可以试着发送消息, 正常情况下, 终端会显示收到的信息.
-# 配置 NoneBot
+## 配置 NoneBot
 在 python 虚拟环境中安装, 需要版本大于 3.9.
-## 安装 nb
+### 安装 nb
 创建虚拟环境
 ```bash
 conda create -n nonebot python==3.10
@@ -91,7 +89,7 @@ python -m pipx ensurepath
 pipx install nb-cli 
 ```
 
-## 使用 nb
+### 使用 nb
 直接输出 nb, 后可根据提示创建项目
 ```bash
 nb
@@ -114,7 +112,7 @@ pip install <插件名称>
 ```
 
 
-## 配置 nb
+### 配置 nb
 用 nb 生成一个项目
 修改 `.env` 文件如下
 ```
@@ -130,7 +128,7 @@ ONEBOT_ACCESS_TOKEN=qttao123
 这里的 `HOST` 和 `PORT` 应与 napcat 中 反向 `ws` 一致
 `ONEBOT_ACCESS_TOKEN` 与 `token` 一致
 
-# 编写 typst 机器人
+## 编写 typst 机器人
 思路其实很简单
 1. napcat 用于与 qq 通信
 2. nonebot 插件接收的信息后, 提取其中的 typst 脚本
