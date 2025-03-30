@@ -10,7 +10,7 @@ share: true
 image: 
 description: 
 created: 2025-03-27T01:23:46+08:00
-updated: 2025-03-29T23:34:25+08:00
+updated: 2025-03-29T23:36:07+08:00
 ---
 
 ## 服务端
@@ -45,7 +45,7 @@ services:
 Macos 端的 vaultwarden 配置非常抽象。当你选择从第三方安装软件时，他不能支持在浏览器上 biometrics 解锁，也就是指纹解锁；而当你选择从 app store 安装软件时，他无法支持实验功能（ssh 相关）。
 
 好在这些都有解决方案，对于第三方安装的软件，可以通过添加环境变量
-```
+```plain
 ALLOW_BROWSER_INTEGRATION_OVERRIDE=true
 ```
 以增强浏览器集成。但是这又遇到一个问题 ------ 只在终端运行的时候生效，如何直接从应用启动无法继承环境变量。
