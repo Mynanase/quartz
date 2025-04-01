@@ -23,7 +23,12 @@ const config: QuartzConfig = {
       fontOrigin: "local",
       cdnCaching: true,
       typography: {
-        header: "Ysabeau SC, TsangerYuYangT W02",
+        header: 
+          {
+            name: "Ysabeau SC, TsangerYuYangT W02",
+            weights: [400],
+            includeItalic: false,
+          },
         body: "LXGW Neo ZhiSong",
         code: "Iosevka Nerd Font Mono, LXGW Neo XiHei",
       },

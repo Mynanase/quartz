@@ -121,18 +121,10 @@ export async function processGoogleFonts(
 
 /*******20250402 qttao*******/
 function formatFontFamily(fontStr: string): string {
-  // Split by commas
+  // Split by commas, trim whitespace, and wrap any font name with spaces in quotes
   return fontStr.split(',')
-    .map(font => {
-      const trimmed = font.trim();
-      // Only add quotes if the font name contains spaces AND is not already quoted
-      if (trimmed.includes(' ') && 
-          !(trimmed.startsWith('"') && trimmed.endsWith('"')) && 
-          !(trimmed.startsWith("'") && trimmed.endsWith("'"))) {
-        return `"${trimmed}"`;
-      }
-      return trimmed;
-    })
+    .map(font => font.trim())
+    .map(font => font.includes(' ') && !font.includes('"') && !font.includes("'") ? `"${font}"` : font)
     .join(', ');
 }
 
