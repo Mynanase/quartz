@@ -54,13 +54,18 @@
   font-size: var(--font-size-medium);
 }
 
+.breadcrumb-container {
+  font-family: var(--UIFont);
+  font-size: var(--font-size-medium);
+}
+
 .article-title {
   margin: 1rem 0 0;
 }
 
 .content-meta {
   font-family: var(--codeFont);    
-  font-size: --font-size-small;
+  font-size: var(--font-size-small);
   letter-spacing: 0.02em; 
   // color: var(--secondary);
   margin-bottom: 0rem;
@@ -110,9 +115,10 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 /* Adjust overall font size for recent notes section */
 .recent-notes {  
   & > h3 {
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-large);
   }
   & > ul.recent-ul li .section {
+    margin: 0;
     & > .desc > h3 > a{
       font-size: var(--font-size-medium);
       padding: 0;
@@ -121,7 +127,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
       font-family: var(--codeFont);
       font-size: var(--font-size-small);
       margin: 0;
-      color: var(--tertiary);
+      color: var(--grey);
     }
   }
 }
