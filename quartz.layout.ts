@@ -35,7 +35,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
-    Component.TagList(),
+    // Component.TagList(),
   ],
   left: [
     Component.PageTitle(),
@@ -90,6 +90,7 @@ export const defaultContentPageLayout: PageLayout = {
     ),    
   ],
   right: [
+    Component.TagList(),
     Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents({
       // maxDepth: 3,

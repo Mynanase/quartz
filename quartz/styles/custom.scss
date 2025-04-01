@@ -63,6 +63,8 @@
 .page>#quartz-body .center, .page>#quartz-body footer {
   width: 720px;
   min-width: unset;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .page>#quartz-body .page-header {
@@ -70,8 +72,8 @@
 }
 
 .page>#quartz-body footer {
-  font-family: var(--codeFont);
-  font-size: var(--font-size-large);
+  font-family: var(--headerFont);
+  font-size: var(--font-size-medium);
 }
 
 .breadcrumb-container {
@@ -80,7 +82,8 @@
 }
 
 .article-title {
-  margin: 1rem 0 0;
+  font-size: 1.5em;
+  margin: .5rem 0 .25em;
 }
 
 .content-meta {
@@ -88,18 +91,19 @@
   font-size: var(--font-size-medium);
   letter-spacing: 0.02em; 
   // color: var(--secondary);
-  margin-bottom: 0rem;
+  margin-bottom: 2em;
   .update-icon {
     stroke-width: 1.5;
     color: var(--tertiary);
   }
 }
 
-.tags {
+ul.tags {
+  gap: unset;
   margin-top: .2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.5em;
   font-family: var(--codeFont);
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
 }
 
 sup .internet {
@@ -127,7 +131,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
   margin: 2em 0 1em;
 }
 .explorer-content{
-  margin-top: 1rem;
+  margin-top: 1em;
   font-size: var(--font-size-large);
 }
 .folder-container div>a {
@@ -169,12 +173,12 @@ div#explorer-content ul li {
 
 // Adjust Outline
 button.toc-header { 
-  margen: .5em 0;
+  margin: .5em 0;
   & h3 {
     font-size: var(--font-size-large);
   }
   & ul {
-    margin: 1rem 0;
+    margin: .5em 0;
   }
   & .fold {
     opacity: .6;
@@ -182,10 +186,9 @@ button.toc-header {
 }
 .toc-content {
   font-size: var(--font-size-large);
-  margin: .75em 0;
   // font-family: "LXGW Neo XiHei";
 }
 
 div.graph {
-  margin-bottom: 2.875em;
+  margin-bottom: 2.5em;
 }
