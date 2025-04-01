@@ -44,7 +44,6 @@ export function getFontSpecificationName(spec: FontSpecification): string {
   if (typeof spec === "string") {
     return spec
   }
-
   return spec.name
 }
 
@@ -53,7 +52,8 @@ function formatFontSpecification(type: "header" | "body" | "code", spec: FontSpe
     spec = { name: spec }
   }
 
-  const defaultIncludeWeights = type === "header" ? [400, 700] : [400, 600]
+  // const defaultIncludeWeights = type === "header" ? [400, 700] : [400, 600]
+  const defaultIncludeWeights = type === "header" ? [400] : [400, 600]
   const defaultIncludeItalic = type === "body"
   const weights = spec.weights ?? defaultIncludeWeights
   const italic = spec.includeItalic ?? defaultIncludeItalic
@@ -77,7 +77,6 @@ function formatFontSpecification(type: "header" | "body" | "code", spec: FontSpe
   if (features.length > 0) {
     return `${spec.name}:${features.join(",")}`
   }
-
   return spec.name
 }
 
