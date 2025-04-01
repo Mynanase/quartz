@@ -1,3 +1,4 @@
+import { max } from "d3"
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { SimpleSlug } from "./quartz/util/path"
@@ -91,7 +92,10 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.TableOfContents({
+      // maxDepth: 3,
+      // minEntries: 1,
+    })),
     Component.Backlinks(),
   ],
 }
