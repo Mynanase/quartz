@@ -25,12 +25,16 @@ const config: QuartzConfig = {
       typography: {
         header: 
           {
-            name: "Ysabeau SC, TsangerYuYangT W02",
+            name: "Ysabeau SC, 'TsangerYuYangT W02'",
             weights: [400],
             includeItalic: false,
           },
-        body: "LXGW Neo ZhiSong",
-        code: "Iosevka Nerd Font Mono, LXGW Neo XiHei",
+        body: {
+          name: "LXGW Neo ZhiSong",
+          weights: [400],
+          includeItalic: false,
+        },
+        code: "Iosevka Nerd Font Mono, 'LXGW Neo XiHei'",
       },
       colors: {
         lightMode: {
