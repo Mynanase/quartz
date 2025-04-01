@@ -24,8 +24,7 @@ export const sharedPageComponents: SharedLayout = {
   ],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/Mynanase/quartz",
     },
   }),
 }
@@ -56,20 +55,20 @@ export const defaultContentPageLayout: PageLayout = {
       title: "Explorer",
       folderClickBehavior: "link",
       folderDefaultState: "collapsed",
-      mapFn: (node) => {
-        if (node.isFolder) {
-          node.displayName = "📁 " + node.displayName
-        } else {
-          node.displayName = "📄 " + node.displayName
-        }
-      },
+      // mapFn: (node) => {
+      //   if (node.isFolder) {
+      //     node.displayName = "📁 " + node.displayName
+      //   } else {
+      //     node.displayName = "📄 " + node.displayName
+      //   }
+      // },
     }),
     Component.DesktopOnly(
       Component.RecentNotes({
         title: "Most Recent",
         showTags: false,
-        limit: 6,
-        linkToMore: undefined, 
+        limit: 5,
+        linkToMore: "tags/" as SimpleSlug, 
         filter: (f) => {
           if (f.filePath?.endsWith("index.md")) {
             return false

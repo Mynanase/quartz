@@ -31,40 +31,51 @@
 }
 
 :root {
-  --font-size-small: 12px;
   --font-size-medium: 14px;
   --font-size-large: 16px;
 
   --UIFont: "LXGW Neo XiHei";
   --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
-  --headFont: "Ysabeau SC", "TsangerYuYangT W02" !important;
+  --headerFont: "Ysabeau SC", "TsangerYuYangT W02" !important;
   --bodyFont: "LXGW Neo ZhiSong" !important;
 }
 
 .page {
-  max-width: 90%;
+  max-width: 100%;
 }
 
-.page>#quartz-body .sidebar.left {
-  padding: 3rem 2rem 2rem 1rem;
+h1.page-title{
+  font-size: 1.25em;
+  margin-bottom: 1em;
 }
 
-.page>#quartz-body .sidebar.right {
-  padding: 3rem 1rem 2rem 2rem;
+.page>#quartz-body .sidebar{
+  gap: unset;
+  padding: 6em 1.5em 0em 1.5em;
+  & .left {
+    right: calc(50vw - 727px)
+  }
+  & .right {
+    right: calc(50vw - 727px)
+  }
+}
+
+.page .center, .page footer {
+  max-width: 720px;
 }
 
 .page>#quartz-body .page-header {
-  margin: 3rem 0 0;
+  margin: 6rem 0 0;
 }
 
 .page>#quartz-body footer {
   font-family: var(--codeFont);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-large);
 }
 
 .breadcrumb-container {
   font-family: var(--UIFont);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-large);
 }
 
 .article-title {
@@ -73,7 +84,7 @@
 
 .content-meta {
   font-family: var(--codeFont);    
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-medium);
   letter-spacing: 0.02em; 
   // color: var(--secondary);
   margin-bottom: 0rem;
@@ -87,7 +98,7 @@
   margin-top: .2rem;
   margin-bottom: 1.2rem;
   font-family: var(--codeFont);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-large);
 }
 
 sup .internet {
@@ -113,30 +124,40 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 /* Adjust explorer */
 .explorer-content{
   margin-top: 1rem;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-large);
 }
 .folder-container div>a {
   // font-family: "Iosevka Nerd Font", "LXGW Neo XiHei";
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-large);
+}
+div#explorer-content>ul {
+  margin-top: .75em;
+}
+div#explorer-content ul li {
+  margin-bottom: .75em;
 }
 
 /* Adjust overall font size for recent notes section */
 .recent-notes {  
+  margin: 2em 0 1rem;
   & > h3 {
     font-size: var(--font-size-large);
   }
-  & > ul.recent-ul li { 
-    margin: 0;
-    .section {
-      & > .desc > h3 > a{
-        font-size: var(--font-size-medium);
-        padding: 0;
-      }
-      & > .meta {
-        font-family: var(--codeFont);
-        font-size: var(--font-size-small);
-        margin: 0;
-        color: var(--grey);
+  & > ul.recent-ul {
+    margin-top: 1rem;
+    li { 
+      margin: .75em 0;
+      .section {
+        & > .desc > h3 > a{
+          font-size: var(--font-size-large);
+          padding: 0;
+        }
+        & > .meta {
+          font-family: var(--codeFont);
+          font-size: var(--font-size-medium);
+          margin: 0;
+          color: var(--grey);
+        }
       }
     }
   }
@@ -144,15 +165,23 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 
 // Adjust Outline
 button.toc-header { 
+  margen: .5em 0;
   & h3 {
     font-size: var(--font-size-large);
+  }
+  & ul {
+    margin: 1rem 0;
   }
   & .fold {
     opacity: .6;
   } 
 }
 .toc-content {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-large);
+  margin: .75em 0;
   // font-family: "LXGW Neo XiHei";
 }
 
+div.graph {
+  margin-bottom: 2.875em;
+}

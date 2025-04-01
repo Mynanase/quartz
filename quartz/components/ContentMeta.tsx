@@ -49,7 +49,6 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
             contentMeta && 'updatedDate' in (contentMeta as any) ? 
             (contentMeta as any).updatedDate : 
             "󰚰"
-          
           segments.push(
             <span>
               {updatedText}{" "}
