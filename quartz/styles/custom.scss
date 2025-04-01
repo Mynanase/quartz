@@ -117,17 +117,19 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
   & > h3 {
     font-size: var(--font-size-large);
   }
-  & > ul.recent-ul li .section {
+  & > ul.recent-ul li { 
     margin: 0;
-    & > .desc > h3 > a{
-      font-size: var(--font-size-medium);
-      padding: 0;
-    }
-    & > .meta {
-      font-family: var(--codeFont);
-      font-size: var(--font-size-small);
-      margin: 0;
-      color: var(--grey);
+    .section {
+      & > .desc > h3 > a{
+        font-size: var(--font-size-medium);
+        padding: 0;
+      }
+      & > .meta {
+        font-family: var(--codeFont);
+        font-size: var(--font-size-small);
+        margin: 0;
+        color: var(--grey);
+      }
     }
   }
 }
