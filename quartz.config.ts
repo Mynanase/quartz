@@ -20,21 +20,12 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "local",
+      fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: 
-          {
-            name: "Ysabeau SC, 'TsangerYuYangT W02'",
-            weights: [400],
-            includeItalic: false,
-          },
-        body: {
-          name: "LXGW Neo ZhiSong",
-          weights: [400],
-          includeItalic: false,
-        },
-        code: "Iosevka Nerd Font Mono, 'LXGW Neo XiHei'",
+        header: "Ysabeau SC",
+        body: "Noto Sans SC",
+        code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
