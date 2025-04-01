@@ -4,6 +4,7 @@
 @use "./fonts/LXGWNeoZhiSong.css";
 @use "./fonts/LXGWNeoXiHei.css";
 @use "./fonts/CangErYuYangTiW02.css";
+@use "./fonts//QiushuiShotaiBright.css";
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
@@ -37,7 +38,11 @@
   --UIFont: "LXGW Neo XiHei";
   --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
   --headerFont: "Ysabeau SC", "TsangerYuYangT W02" !important;
-  --bodyFont: "LXGW Neo ZhiSong" !important;
+  --bodyFont: "QiushuiShotai Bright" !important;
+}
+
+tbody, li, p {
+  line-height: 150%;
 }
 
 .page {
@@ -83,7 +88,7 @@
 
 .article-title {
   font-size: 1.5em;
-  margin: .5rem 0 .25em;
+  margin: .5rem 0 0em;
 }
 
 .content-meta {

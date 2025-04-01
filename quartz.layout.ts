@@ -32,7 +32,12 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
+    Component.Breadcrumbs({
+      spacerSymbol: "/",
+      rootName: "Home",
+      resolveFrontmatterTitle: true,
+      showCurrentPage: true,
+    }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     // Component.TagList(),
@@ -50,18 +55,6 @@ export const defaultContentPageLayout: PageLayout = {
       ],
       direction: "row",
       gap: "1rem",
-    }),
-    Component.Explorer({
-      title: "Explorer",
-      folderClickBehavior: "link",
-      folderDefaultState: "collapsed",
-      // mapFn: (node) => {
-      //   if (node.isFolder) {
-      //     node.displayName = "📁 " + node.displayName
-      //   } else {
-      //     node.displayName = "📄 " + node.displayName
-      //   }
-      // },
     }),
     Component.DesktopOnly(
       Component.RecentNotes({
@@ -88,6 +81,18 @@ export const defaultContentPageLayout: PageLayout = {
         }
       })
     ),    
+    Component.Explorer({
+      title: "Explorer",
+      folderClickBehavior: "link",
+      folderDefaultState: "collapsed",
+      // mapFn: (node) => {
+      //   if (node.isFolder) {
+      //     node.displayName = "📁 " + node.displayName
+      //   } else {
+      //     node.displayName = "📄 " + node.displayName
+      //   }
+      // },
+    }),
   ],
   right: [
     Component.TagList(),
