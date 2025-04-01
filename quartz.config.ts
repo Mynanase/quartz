@@ -23,9 +23,9 @@ const config: QuartzConfig = {
       fontOrigin: "local",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Ysabeau SC, LXGW Neo ZhiSong",
-        code: "Iosevka Nerd Font Mono, LXGW Neo XiHei",
+        header: "Ysabeau SC, Schibsted Grotesk",
+        body: "LXGW Neo ZhiSong",
+        code: "Iosevka Nerd Font Mono",
       },
       colors: {
         lightMode: {
