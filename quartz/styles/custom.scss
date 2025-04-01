@@ -10,7 +10,6 @@
     font-style: normal;
     font-display:swap;
 }
-
 @font-face {
     font-family: "Iosevka Nerd Font Mono";
     src: url('../static/fonts/IosevkaNerdFontMono-Regular.woff2') format('woff2');
@@ -22,6 +21,12 @@
     src: url('../static/fonts/IosevkaNerdFont-Regular.woff2') format('woff2');
     font-style: normal;
     font-display:swap;
+}
+@font-face {
+  font-family: "Ysabeau SC";
+  src: url('../static/fonts/YsabeauSC-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display:swap;
 }
 
 :root {
