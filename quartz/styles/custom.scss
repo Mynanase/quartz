@@ -24,9 +24,63 @@
     font-display:swap;
 }
 
-// :root {
-//     --codeFont: "Sarasa Mono SC Nerd Font" !important;
-// }
+:root {
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 16px;
+
+  --UIFont: "LXGW Neo XiHei";
+  // --codeFont: "Sarasa Mono SC Nerd Font" !important;
+}
+
+.page {
+  max-width: 90%;
+}
+
+.page>#quartz-body .sidebar.left {
+  padding: 3rem 2rem 2rem 1rem;
+}
+
+.page>#quartz-body .sidebar.right {
+  padding: 3rem 1rem 2rem 2rem;
+}
+
+.page>#quartz-body .page-header {
+  margin: 3rem 0 0;
+}
+
+.page>#quartz-body footer {
+  font-family: var(--codeFont);
+  font-size: var(--font-size-medium);
+}
+
+.article-title {
+  margin: 1rem 0 0;
+}
+
+.content-meta {
+  font-family: var(--codeFont);    
+  font-size: --font-size-small;
+  letter-spacing: 0.02em; 
+  // color: var(--secondary);
+  margin-bottom: 0rem;
+  .update-icon {
+    stroke-width: 1.5;
+    color: var(--tertiary);
+  }
+}
+
+.tags {
+  margin-top: .2rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--codeFont);
+  font-size: var(--font-size-medium);
+}
+
+sup .internet {
+  background-color: transparent;
+  padding: 0;
+}
 
 img {
     display: block;
@@ -43,51 +97,46 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
     margin-right: auto;
 } 
 
-.content-meta {
-    // Font family
-    font-family: "Iosevka Nerd Font", "LXGW Neo XiHei";
-    
-    // Font size
-    font-size: 0.8rem;
+/* Adjust explorer */
+.explorer-content{
+  margin-top: 1rem;
+  font-size: var(--font-size-medium);
+}
+.folder-container div>a {
+  // font-family: "Iosevka Nerd Font", "LXGW Neo XiHei";
+  font-size: var(--font-size-medium);
+}
 
-    // Letter spacing
-    letter-spacing: 0.02em;
-    
-    // You can also customize the color further
-    // color: var(--secondary);
-    
-    // Or add other styles
-    margin-bottom: 2rem;
-    
-    // You can also style the update icon specifically
-    .update-icon {
-      stroke-width: 1.5;
+/* Adjust overall font size for recent notes section */
+.recent-notes {  
+  & > h3 {
+    font-size: var(--font-size-medium);
+  }
+  & > ul.recent-ul li .section {
+    & > .desc > h3 > a{
+      font-size: var(--font-size-medium);
+      padding: 0;
+    }
+    & > .meta {
+      font-family: var(--codeFont);
+      font-size: var(--font-size-small);
+      margin: 0;
       color: var(--tertiary);
     }
   }
-
-/* Adjust overall font size for recent notes section */
-.recent-notes {
-  font-size: 0.9rem !important; /* Use !important to override */
-  
-  & > ul.recent-ul {
-    font-size: 0.9rem; /* Apply font size to the list as well */
-    
-    & > li {
-      font-size: 0.9rem; /* Apply font size to list items */
-      
-      .section {
-        font-size: 0.9rem; /* Apply to section elements */
-      }
-    }
-  }
-
-  li .section > .meta {
-    font-family: "Iosevka Nerd Font", "LXGW Neo XiHei"; /* Change the font family */
-    font-size: 0.8rem; /* Adjust font size */
-    // color: #666; /* Change text color */
-    // font-style: italic; /* Make it italic if desired */
-    // font-weight: 300; /* Lighter font weight */
-    /* Add any other font-related properties you want to modify */
-  }
 }
+
+// Adjust Outline
+button.toc-header { 
+  & h3 {
+    font-size: var(--font-size-large);
+  }
+  & .fold {
+    opacity: .6;
+  } 
+}
+.toc-content {
+  font-size: var(--font-size-medium);
+  // font-family: "LXGW Neo XiHei";
+}
+
