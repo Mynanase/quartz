@@ -44,7 +44,7 @@
   max-width: 100%;
 }
 
-h1.page-title{
+.page-title{
   font-size: 1.25em;
   margin-bottom: 1em;
 }
@@ -60,7 +60,7 @@ h1.page-title{
   }
 }
 
-.page .center, .page footer {
+.page>#quartz-body .center, .page>#quartz-body footer {
   max-width: 720px;
 }
 
@@ -122,6 +122,9 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 } 
 
 /* Adjust explorer */
+.explorer{
+  margin: 2em 0 1em;
+}
 .explorer-content{
   margin-top: 1rem;
   font-size: var(--font-size-large);

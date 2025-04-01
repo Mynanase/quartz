@@ -44,7 +44,7 @@ export const defaultContentPageLayout: PageLayout = {
       components: [
         {
           Component: Component.Search(),
-          // grow: true,
+          grow: true,
         },
         { Component: Component.Darkmode() },
       ],
