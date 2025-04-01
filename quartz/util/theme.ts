@@ -52,8 +52,8 @@ function formatFontSpecification(type: "header" | "body" | "code", spec: FontSpe
     spec = { name: spec }
   }
 
-  // const defaultIncludeWeights = type === "header" ? [400, 700] : [400, 600]
-  const defaultIncludeWeights = type === "header" ? [400] : [400, 600]
+  const defaultIncludeWeights = type === "header" ? [400, 700] : [400, 600]
+  // const defaultIncludeWeights = type === "header" ? [400] : [400, 600]
   const defaultIncludeItalic = type === "body"
   const weights = spec.weights ?? defaultIncludeWeights
   const italic = spec.includeItalic ?? defaultIncludeItalic
@@ -121,12 +121,20 @@ export async function processGoogleFonts(
 
 /*******20250402 qttao*******/
 function formatFontFamily(fontStr: string): string {
-  // Split by commas, trim whitespace, and wrap any font name with spaces in quotes
   return fontStr.split(',')
-    .map(font => font.trim())
-    .map(font => font.includes(' ') && !font.includes('"') && !font.includes("'") ? `"${font}"` : font)
+    .map(font => {
+      const trimmed = font.trim();
+      // Skip if already quoted
+      if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || 
+          (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
+        return trimmed;
+      }
+      // Add quotes to all font names
+      return `"${trimmed}"`;
+    })
     .join(', ');
 }
+
 
 export function joinStyles(theme: Theme, ...stylesheet: string[]) {
   const headerFont = formatFontFamily(getFontSpecificationName(theme.typography.header));
