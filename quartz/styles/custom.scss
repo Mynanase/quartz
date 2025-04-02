@@ -5,6 +5,7 @@
 @use "./fonts/LXGWNeoXiHei.css";
 @use "./fonts/CangErYuYangTiW02.css";
 @use "./fonts//QiushuiShotaiBright.css";
+@use "./fonts/SmileySans.css";  // Smiley Sans Oblique
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
@@ -37,8 +38,8 @@
 
   --UIFont: "LXGW Neo XiHei";
   --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
-  --headerFont: "Ysabeau SC", "TsangerYuYangT W02" !important;
-  --bodyFont: "QiushuiShotai Bright" !important;
+  --headerFont: "Ysabeau SC", "Smiley Sans Oblique", "TsangerYuYangT W02" !important;
+  --bodyFont: "TsangerYuYangT W02", "QiushuiShotai Bright" !important;
 }
 
 .page {
