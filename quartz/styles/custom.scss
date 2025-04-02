@@ -5,6 +5,7 @@
 @use "./fonts/LXGWNeoXiHei.css";
 @use "./fonts/CangErYuYangTiW02.css"; // TsangerYuYangT W02
 @use "./fonts/CangErYuYangTiW03.css"; // TsangerYuYangT W03
+@use "./fonts/CangErYuYangTiW04.css"; // TsangerYuYangT W04
 @use "./fonts//QiushuiShotaiBright.css";
 @use "./fonts/SmileySans.css";  // Smiley Sans Oblique
 @use "./fonts/Ysabeau-Regular.css"; // Ysabeau
@@ -43,10 +44,12 @@
   --font-size-medium: 14px;
   --font-size-large: 16px;
   
-  --UIFont: "TsangerYuYangT W03";
+
   --UIFontLight: "TsangerYuYangT W02";
+  --UIFont: "TsangerYuYangT W03";
+  --UIFontBold: "TsangerYuYangT W04";
   --codeFont: "Iosevka Nerd Font Mono" !important;
-  --headerFont: "TsangerYuYangT W02" !important;
+  --headerFont: "TsangerYuYangT W04" !important;
   --bodyFont: "LXGW Bright" !important;
 }
 
@@ -176,7 +179,7 @@ div#explorer-content ul li {
   }
   & > ul.recent-ul {
     margin: 1rem 0 .5rem;
-    font-family: var(--UIFontBold);
+    font-family: var(--UIFont);
     li { 
       margin: .5rem 0;
       .section {
