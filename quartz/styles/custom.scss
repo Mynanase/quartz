@@ -10,7 +10,6 @@
 @use "./fonts/Ysabeau-Regular.css"; // Ysabeau
 @use "./fonts/975MaruSC.css" as *; // 975Maru SC
 @use "./fonts/LXGWBright-Regular.css"; //
-@use "./fonts/MapleMonoCN.css";
 @use "./fonts/DouyinSansBold.css"; // DouyinSans
 @use "./fonts/MaokenZhuyuanTi-2.css"; // MaokenZhuyuanTi
 @use "./fonts/YouSheYuFeiTeJianKangTi-2.css"; // YouSheShaYuFeiTeJianKangTi
@@ -44,8 +43,8 @@
   --font-size-medium: 14px;
   --font-size-large: 16px;
   
-  --UIFont: "TsangerYuYangT W02";
-  --UIFontBold: "TsangerYuYangT W03";
+  --UIFont: "TsangerYuYangT W03";
+  --UIFontLight: "TsangerYuYangT W02";
   --codeFont: "Iosevka Nerd Font Mono" !important;
   --headerFont: "TsangerYuYangT W02" !important;
   --bodyFont: "LXGW Bright" !important;
@@ -151,10 +150,10 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 .explorer-content{
   margin-top: 1rem;
   font-size: var(--font-size-large);
-  font-family: var(--UIFont);
+  font-family: var(--UIFontLight);
 }
 .folder-container div>a {
-  font-family: var(--UIFontBold);
+  font-family: var(--UIFont);
   font-size: var(--font-size-large);
 }
 div#explorer-content>ul {
