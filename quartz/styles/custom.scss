@@ -106,7 +106,7 @@
   font-family: var(--codeFont);
   font-size: var(--font-size-medium);
   // letter-spacing: 0.02em; 
-  // color: var(--secondary);
+  color: var(--darkgray);
   margin-bottom: 2rem;
   opacity: .6;
   .update-icon {
@@ -178,7 +178,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
           font-family: var(--codeFont);
           font-size: var(--font-size-medium);
           margin: 0;
-          color: var(--grey);
+          color: var(--darkgray);
         }
       }
     }
