@@ -12,7 +12,7 @@
 @use "./fonts/MapleMonoCN.css";
 @use "./fonts/DouyinSansBold.css"; // DouyinSans
 @use "./fonts/MaokenZhuyuanTi-2.css"; // MaokenZhuyuanTi
-@use "./fonts/YouSheYuFeiTeJianKangTi-2.css"; // YouSheYuFeiTeJianKangTi
+@use "./fonts/YouSheYuFeiTeJianKangTi-2.css"; // YouSheShaYuFeiTeJianKangTi
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
@@ -44,9 +44,9 @@
   --font-size-large: 16px;
 
   
-  --UIFont: "YouSheYuFeiTeJianKangTi";
+  --UIFont: "YouSheShaYuFeiTeJianKangTi";
   --codeFont: "Iosevka Nerd Font Mono" !important;
-  --headerFont: "YouSheYuFeiTeJianKangTi" !important;
+  --headerFont: "YouSheShaYuFeiTeJianKangTi" !important;
   --bodyFont: "LXGW Bright" !important;
 }
 
