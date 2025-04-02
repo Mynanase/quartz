@@ -47,35 +47,35 @@
   --UIFont: "LXGW Neo XiHei";
   --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
   --headerFont: "Ysabeau SC", "975Maru SC" !important;
-  --bodyFont: "975Maru SC", "QiushuiShotai Bright" !important;
+  --bodyFont: "QiushuiShotai Bright" !important;
 }
 
 .page {
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .page-title{
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
 }
 
 .page>#quartz-body .sidebar{
-  gap: unset;
-  padding: 6em 1.5em 0em 1.5em;
+  gap: 1rem;
+  padding: 6rem 1.5rem 0rem 1.5rem;
 }
-.page>#quartz-body .sidebar.left {
-  left: calc(50vw - 727px)
-}
-.page>#quartz-body .sidebar.right {
-  right: calc(50vw - 727px)
-}
+// .page>#quartz-body .sidebar.left {
+//   left: calc(50vw - 727px)
+// }
+// .page>#quartz-body .sidebar.right {
+//   right: calc(50vw - 727px)
+// }
 
-.page>#quartz-body .center, .page>#quartz-body footer {
-  width: 720px;
-  min-width: unset;
-  margin-right: auto;
-  margin-left: auto;
-}
+// .page>#quartz-body .center, .page>#quartz-body footer {
+  // width: 720px;
+  // min-width: unset;
+  // margin-right: auto;
+  // margin-left: auto;
+// }
 
 .page>#quartz-body .page-header {
   margin: 6rem 0 0;
@@ -89,6 +89,7 @@
 .breadcrumb-container {
   font-family: var(--UIFont);
   font-size: var(--font-size-medium);
+  margin: 0;
 }
 
 .article-title {
@@ -111,7 +112,7 @@
 ul.tags {
   gap: unset;
   margin-top: .2rem;
-  margin-bottom: 2.5em;
+  margin-bottom: 1.5em;
   font-family: var(--codeFont);
   font-size: var(--font-size-medium);
 }
@@ -162,7 +163,7 @@ div#explorer-content ul li {
 
 /* Adjust overall font size for recent notes section */
 .recent-notes {  
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 0;
   & > h3 {
     margin: 0;
     font-size: var(--font-size-large);
@@ -208,7 +209,7 @@ button.toc-header {
 }
 
 div.graph {
-  margin-bottom: 2.5em;
+  margin-bottom: 1.5rem;
 }
 .graph>h3 {
   font-size: var(--font-size-large);
