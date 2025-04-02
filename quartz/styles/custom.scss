@@ -7,7 +7,7 @@
 @use "./fonts/CangErYuYangTiW03.css"; // TsangerYuYangT W03
 @use "./fonts/CangErYuYangTiW04.css"; // TsangerYuYangT W04
 @use "./fonts/CangErYuMoW02.css"; // TsangerYuMo W02
-@use "./fonts/CangErYuMoW03.css"; // TsangerYuMo W03
+// @use "./fonts/CangErYuMoW03.css"; // TsangerYuMo W03
 @use "./fonts//QiushuiShotaiBright.css";
 @use "./fonts/SmileySans.css"; // Smiley Sans Oblique
 @use "./fonts/Ysabeau-Regular.css"; // Ysabeau
@@ -51,9 +51,9 @@
 
   // --UIFontLight: "TsangerYuYangT W02";
   --UIFont: "TsangerYuMo W02";
-  --UIFontBold: "TsangerYuMo W03";
+  // --UIFontBold: "TsangerYuMo W03";
   --codeFont: "Iosevka Nerd Font Mono" !important;
-  --headerFont: "TsangerYuMo W03" !important;
+  --headerFont: "TsangerYuMo W02" !important;
   --bodyFont: "LXGW Bright" !important;
 }
 
@@ -92,8 +92,7 @@
 }
 
 .breadcrumb-container {
-  font-family: var(--UIFont);
-  font-style: normal;
+  font-family: var(--codeFont);
   font-size: var(--font-size-medium);
   margin: 0;
 }
@@ -197,7 +196,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 .explorer-content {
   margin-top: 1rem;
   font-size: var(--font-size-large);
-  font-family: var(--UIFontLight);
+  font-family: var(--UIFont);
 }
 
 .folder-container div>a {
@@ -238,9 +237,10 @@ ul.tags {
 
 // ToC
 button.toc-header {
-  font-family: "Ysabeau SC";
   margin: .5em 0;
-
+  & h3 {
+    font-family: "Ysabeau SC";
+  }
   & .fold {
     opacity: .6;
   }
