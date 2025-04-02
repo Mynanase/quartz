@@ -10,6 +10,7 @@
 @use "./fonts/975MaruSC.css" as *; // 975Maru SC
 @use "./fonts/LXGWBright-Regular.css"; //
 @use "./fonts/MapleMonoCN.css";
+@use "./fonts/DouyinSansBold.css"; // DouyinSans
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
@@ -47,9 +48,9 @@
   --font-size-large: 16px;
 
   
-  --UIFont: "Maple Mono CN" !important;
-  --codeFont: "Iosevka Nerd Font Mono"!important;
-  --headerFont: "975Maru SC" !important;
+  --UIFont: "DouyinSans";
+  --codeFont: "Iosevka Nerd Font Mono" !important;
+  --headerFont: "DouyinSans" !important;
   --bodyFont: "LXGW Bright" !important;
 }
 
@@ -151,7 +152,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 }
 
 .explorer-content{
-  margin-top: .5em;
+  margin-top: 1rem;
   font-size: var(--font-size-large);
   font-family: var(--UIFont);
   font-style: normal;
