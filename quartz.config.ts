@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     locale: "en-US",
     baseUrl: "blog.qttao.net",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "modified",
+    defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
