@@ -7,6 +7,7 @@
 @use "./fonts//QiushuiShotaiBright.css";
 @use "./fonts/SmileySans.css";  // Smiley Sans Oblique
 @use "./fonts/Ysabeau-Regular.css"; // Ysabeau
+@use "./fonts/975MaruSC.css"; // 975Maru SC
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
@@ -45,8 +46,8 @@
 
   --UIFont: "LXGW Neo XiHei";
   --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
-  --headerFont: "Kerox", "TsangerYuYangT W02" !important;
-  --bodyFont: "QiushuiShotai Bright" !important;
+  --headerFont: "Ysabeau SC", "975Maru SC" !important;
+  --bodyFont: "975Maru SC", "QiushuiShotai Bright" !important;
 }
 
 .page {
