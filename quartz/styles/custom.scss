@@ -45,9 +45,9 @@
   --font-size-large: 16px;
 
   --UIFont: "LXGW Neo XiHei";
-  --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
+  --codeFont: "Iosevka Nerd Font Mono"!important;
   --headerFont: "Ysabeau SC", "975Maru SC" !important;
-  --bodyFont: "QiushuiShotai Bright" !important;
+  --bodyFont: "Ysabeau", "TsangerYuYangT W02" !important;
 }
 
 .page {
@@ -139,7 +139,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 
 /* Adjust explorer */
 .explorer{
-  margin: 1em 0 1em;
+  margin: 1rem 0;
   & h2 {
     font-size: var(--font-size-large);
     font-family: "Ysabeau SC";
@@ -147,7 +147,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 }
 
 .explorer-content{
-  margin-top: 1em;
+  margin-top: .5em;
   font-size: var(--font-size-large);
 }
 .folder-container div>a {
@@ -163,9 +163,12 @@ div#explorer-content ul li {
 
 /* Adjust overall font size for recent notes section */
 .recent-notes {  
-  margin: 1rem 0 0;
+  margin: 1.5rem 0 0;
+  & > p {
+    margin: .5rem 0;
+  }
   & > h3 {
-    margin: 0;
+    margin: 0;   
     font-size: var(--font-size-large);
     font-family: "Ysabeau SC";
   }
@@ -189,29 +192,41 @@ div#explorer-content ul li {
   }
 }
 
-// Adjust Outline
+/** right sider */
+// Tag List
+ul.tags {
+  gap: unset;
+  margin-top: 0rem;
+  margin-bottom: .5em;
+  font-family: var(--codeFont);
+  font-size: var(--font-size-medium);
+}
+
+// Graph
+graph {
+  & > h3 {
+    font-size: var(--font-size-large);
+    font-family: "Ysabeau SC";
+    margin: 1rem 0;
+  }
+  & > .graph-outer {
+    margin: 1rem 0;
+  }
+}
+
+// ToC
 button.toc-header { 
   font-family: "Ysabeau SC";
   margin: .5em 0;
-  & h3 {
-    font-size: var(--font-size-large);
-  }
-  & ul {
-    margin: .5em 0;
-  }
   & .fold {
     opacity: .6;
   } 
 }
 .toc-content {
   font-size: var(--font-size-large);
-  // font-family: "LXGW Neo XiHei";
+  & > ul {
+    margin: .5em 0;
+  }
 }
 
-div.graph {
-  margin-bottom: 1.5rem;
-}
-.graph>h3 {
-  font-size: var(--font-size-large);
-  font-family: "Ysabeau SC";
-}
+
