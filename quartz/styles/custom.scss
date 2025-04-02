@@ -91,6 +91,7 @@
 
 .breadcrumb-container {
   font-family: var(--UIFont);
+  font-style: normal;
   font-size: var(--font-size-medium);
   margin: 0;
 }
@@ -153,9 +154,11 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
   margin-top: .5em;
   font-size: var(--font-size-large);
   font-family: var(--UIFont);
+  font-style: normal;
 }
 .folder-container div>a {
   font-family: var(--UIFont);
+  font-style: normal;
   font-size: var(--font-size-large);
 }
 div#explorer-content>ul {
@@ -229,6 +232,7 @@ button.toc-header {
 .toc-content {
   font-size: var(--font-size-large);
   font-family: var(--UIFont);
+  font-style: normal;
   & > ul {
     margin: .5em 0;
   }
