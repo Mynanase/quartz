@@ -6,50 +6,54 @@
 @use "./fonts/CangErYuYangTiW02.css"; // TsangerYuYangT W02
 @use "./fonts/CangErYuYangTiW03.css"; // TsangerYuYangT W03
 @use "./fonts/CangErYuYangTiW04.css"; // TsangerYuYangT W04
+@use "./fonts/CangErYuMoW02.css"; // TsangerYuMo W02
 @use "./fonts//QiushuiShotaiBright.css";
-@use "./fonts/SmileySans.css";  // Smiley Sans Oblique
+@use "./fonts/SmileySans.css"; // Smiley Sans Oblique
 @use "./fonts/Ysabeau-Regular.css"; // Ysabeau
 @use "./fonts/975MaruSC.css" as *; // 975Maru SC
-@use "./fonts/LXGWBright-Regular.css"; //
+@use "./fonts/LXGWBright-Regular.css";
 @use "./fonts/DouyinSansBold.css"; // DouyinSans
 @use "./fonts/MaokenZhuyuanTi-2.css"; // MaokenZhuyuanTi
 @use "./fonts/YouSheYuFeiTeJianKangTi-2.css"; // YouSheShaYuFeiTeJianKangTi
 
 @font-face {
-    font-family: "Symbols Nerd Font Mono";
-    src: url('../static/fonts/SymbolsNerdFont-Regular.woff2') format('woff2');
-    font-style: normal;
-    font-display:swap;
+  font-family: "Symbols Nerd Font Mono";
+  src: url('../static/fonts/SymbolsNerdFont-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
 }
+
 @font-face {
-    font-family: "Iosevka Nerd Font Mono";
-    src: url('../static/fonts/IosevkaNerdFontMono-Regular.woff2') format('woff2');
-    font-style: normal;
-    font-display:swap;
+  font-family: "Iosevka Nerd Font Mono";
+  src: url('../static/fonts/IosevkaNerdFontMono-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
 }
+
 @font-face {
-    font-family: "Iosevka Nerd Font";
-    src: url('../static/fonts/IosevkaNerdFont-Regular.woff2') format('woff2');
-    font-style: normal;
-    font-display:swap;
+  font-family: "Iosevka Nerd Font";
+  src: url('../static/fonts/IosevkaNerdFont-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
 }
+
 @font-face {
   font-family: "Ysabeau SC";
   src: url('../static/fonts/YsabeauSC-Regular.woff2') format('woff2');
   font-style: normal;
-  font-display:swap;
+  font-display: swap;
 }
 
 :root {
   --font-size-medium: 14px;
   --font-size-large: 16px;
-  
+
 
   --UIFontLight: "TsangerYuYangT W02";
-  --UIFont: "TsangerYuYangT W03";
+  --UIFont: "TsangerYuMo W02";
   --UIFontBold: "TsangerYuYangT W04";
   --codeFont: "Iosevka Nerd Font Mono" !important;
-  --headerFont: "TsangerYuYangT W03" !important;
+  --headerFont: "TsangerYuMo W02" !important;
   --bodyFont: "LXGW Bright" !important;
 }
 
@@ -57,10 +61,11 @@
   max-width: 90%;
 }
 
-.page>#quartz-body .sidebar{
+.page>#quartz-body .sidebar {
   gap: 1rem;
   padding: 6rem 1.5rem 0rem 1.5rem;
 }
+
 // .page>#quartz-body .sidebar.left {
 //   left: calc(50vw - 727px)
 // }
@@ -69,18 +74,21 @@
 // }
 
 // .page>#quartz-body .center, .page>#quartz-body footer {
-  // width: 720px;
-  // min-width: unset;
-  // margin-right: auto;
-  // margin-left: auto;
+// width: 720px;
+// min-width: unset;
+// margin-right: auto;
+// margin-left: auto;
 // }
 
 
 
 /** Center */
-.page>#quartz-body .page-header {
-  margin: 6rem 0 0;
+.page>#quartz-body {
   gap: 1.5rem;
+
+  & .page-header {
+    margin: 6rem 0 0;
+  }
 }
 
 .breadcrumb-container {
@@ -96,11 +104,12 @@
 }
 
 .content-meta {
-  font-family: var(--codeFont);    
+  font-family: var(--codeFont);
   font-size: var(--font-size-medium);
   // letter-spacing: 0.02em; 
   // color: var(--secondary);
   margin-bottom: 2rem;
+
   .update-icon {
     stroke-width: 1.5;
     color: var(--tertiary);
@@ -113,18 +122,18 @@ sup .internet {
 }
 
 img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // mathjax
 mjx-container.MathJax[jax="SVG"][display="true"] {
-    display: flex ;
-    justify-content: center ;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page>#quartz-body footer {
@@ -134,32 +143,38 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 
 
 /** Left sider */
-.page-title{
+.page-title {
   font-size: 1.5rem;
   // margin-bottom: 1rem;
 }
 
-.recent-notes {  
+.recent-notes {
   margin: 1.5rem 0 0;
-  & > p {
+
+  &>p {
     margin: .5rem 0;
   }
-  & > h3 {
-    margin: 0;   
+
+  &>h3 {
+    margin: 0;
     font-size: var(--font-size-large);
     font-family: "Ysabeau SC";
   }
-  & > ul.recent-ul {
+
+  &>ul.recent-ul {
     margin: 1rem 0 .5rem;
     font-family: var(--UIFont);
-    li { 
+
+    li {
       margin: .5rem 0;
+
       .section {
-        & > .desc > h3 > a{
+        &>.desc>h3>a {
           font-size: var(--font-size-large);
           padding: 0;
         }
-        & > .meta {
+
+        &>.meta {
           font-family: var(--codeFont);
           font-size: var(--font-size-medium);
           margin: 0;
@@ -170,25 +185,30 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
   }
 }
 
-.explorer{
+.explorer {
   margin: 1rem 0;
+
   & h2 {
     font-size: var(--font-size-large);
     font-family: "Ysabeau SC";
   }
 }
-.explorer-content{
+
+.explorer-content {
   margin-top: 1rem;
   font-size: var(--font-size-large);
   font-family: var(--UIFontLight);
 }
+
 .folder-container div>a {
   font-family: var(--UIFont);
   font-size: var(--font-size-large);
 }
+
 div#explorer-content>ul {
   margin-top: .75em;
 }
+
 div#explorer-content ul li {
   margin-bottom: .75em;
 }
@@ -205,31 +225,33 @@ ul.tags {
 
 // Graph
 .graph {
-  & > h3 {
+  &>h3 {
     font-size: var(--font-size-large);
     font-family: "Ysabeau SC";
     margin: 1rem 0;
   }
-  & > .graph-outer {
+
+  &>.graph-outer {
     margin: 1rem 0;
   }
 }
 
 // ToC
-button.toc-header { 
+button.toc-header {
   font-family: "Ysabeau SC";
   margin: .5em 0;
+
   & .fold {
     opacity: .6;
-  } 
+  }
 }
+
 .toc-content {
   font-size: var(--font-size-large);
   font-family: var(--UIFont);
   font-style: normal;
-  & > ul {
+
+  &>ul {
     margin: .5em 0;
   }
 }
-
-
