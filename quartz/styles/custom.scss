@@ -6,6 +6,7 @@
 @use "./fonts/CangErYuYangTiW02.css";
 @use "./fonts//QiushuiShotaiBright.css";
 @use "./fonts/SmileySans.css";  // Smiley Sans Oblique
+@use "./fonts/Ysabeau-Regular.css"; // Ysabeau
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
@@ -38,8 +39,8 @@
 
   --UIFont: "LXGW Neo XiHei";
   --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
-  --headerFont: "Ysabeau SC", "Smiley Sans Oblique", "TsangerYuYangT W02" !important;
-  --bodyFont: "TsangerYuYangT W02", "QiushuiShotai Bright" !important;
+  --headerFont: "Smiley Sans Oblique", "TsangerYuYangT W02" !important;
+  --bodyFont: "Ysabeau", "TsangerYuYangT W02" !important;
 }
 
 .page {
@@ -131,7 +132,12 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 /* Adjust explorer */
 .explorer{
   margin: 1em 0 1em;
+  & h2 {
+    font-size: var(--font-size-large);
+    font-family: "Ysabeau SC";
+  }
 }
+
 .explorer-content{
   margin-top: 1em;
   font-size: var(--font-size-large);
@@ -153,6 +159,7 @@ div#explorer-content ul li {
   & > h3 {
     margin: 0;
     font-size: var(--font-size-large);
+    font-family: "Ysabeau SC";
   }
   & > ul.recent-ul {
     margin-top: 1rem;
@@ -176,6 +183,7 @@ div#explorer-content ul li {
 
 // Adjust Outline
 button.toc-header { 
+  font-family: "Ysabeau SC";
   margin: .5em 0;
   & h3 {
     font-size: var(--font-size-large);
@@ -194,4 +202,8 @@ button.toc-header {
 
 div.graph {
   margin-bottom: 2.5em;
+}
+.graph>h3 {
+  font-size: var(--font-size-large);
+  font-family: "Ysabeau SC";
 }
