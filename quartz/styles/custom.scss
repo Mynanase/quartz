@@ -7,7 +7,7 @@
 @use "./fonts//QiushuiShotaiBright.css";
 @use "./fonts/SmileySans.css";  // Smiley Sans Oblique
 @use "./fonts/Ysabeau-Regular.css"; // Ysabeau
-@use "./fonts/975MaruSC.css"; // 975Maru SC
+@use "./fonts/975MaruSC.css" as *; // 975Maru SC
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
