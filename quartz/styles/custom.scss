@@ -8,6 +8,8 @@
 @use "./fonts/SmileySans.css";  // Smiley Sans Oblique
 @use "./fonts/Ysabeau-Regular.css"; // Ysabeau
 @use "./fonts/975MaruSC.css" as *; // 975Maru SC
+@use "./fonts/LXGWBright-Regular.css"; //
+@use "./fonts/MapleMonoCN.css";
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
@@ -44,10 +46,11 @@
   --font-size-medium: 14px;
   --font-size-large: 16px;
 
+  
   --UIFont: "LXGW Neo XiHei";
   --codeFont: "Iosevka Nerd Font Mono"!important;
-  --headerFont: "Ysabeau SC", "975Maru SC" !important;
-  --bodyFont: "Ysabeau", "TsangerYuYangT W02" !important;
+  --headerFont: "975Maru SC" !important;
+  --bodyFont: "LXGW Bright" !important;
 }
 
 .page {
@@ -149,9 +152,10 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 .explorer-content{
   margin-top: .5em;
   font-size: var(--font-size-large);
+  font-family: var(--UIFont);
 }
 .folder-container div>a {
-  // font-family: "Iosevka Nerd Font", "LXGW Neo XiHei";
+  font-family: var(--UIFont);
   font-size: var(--font-size-large);
 }
 div#explorer-content>ul {
@@ -224,6 +228,7 @@ button.toc-header {
 }
 .toc-content {
   font-size: var(--font-size-large);
+  font-family: var(--UIFont);
   & > ul {
     margin: .5em 0;
   }
