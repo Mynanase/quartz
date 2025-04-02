@@ -32,6 +32,12 @@
   font-style: normal;
   font-display:swap;
 }
+@font-face {
+  font-family: "Kerox";
+  src: url('../static/fonts/Kerax-NonCommercial.woff2') format('woff2');
+  font-style: normal;
+  font-display:swap;
+}
 
 :root {
   --font-size-medium: 14px;
@@ -39,8 +45,8 @@
 
   --UIFont: "LXGW Neo XiHei";
   --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
-  --headerFont: "Smiley Sans Oblique", "TsangerYuYangT W02" !important;
-  --bodyFont: "Ysabeau", "TsangerYuYangT W02" !important;
+  --headerFont: "Kerox", "TsangerYuYangT W02" !important;
+  --bodyFont: "QiushuiShotai Bright" !important;
 }
 
 .page {
