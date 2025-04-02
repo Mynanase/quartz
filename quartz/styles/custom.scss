@@ -57,10 +57,7 @@
   max-width: 90%;
 }
 
-.page-title{
-  font-size: 1.5rem;
-  // margin-bottom: 1rem;
-}
+
 
 .page>#quartz-body .sidebar{
   gap: 1.5em;
@@ -80,13 +77,11 @@
   // margin-left: auto;
 // }
 
+
+
+/** Center */
 .page>#quartz-body .page-header {
   margin: 6rem 0 0;
-}
-
-.page>#quartz-body footer {
-  font-family: "Ysaebau SC";
-  font-size: var(--font-size-medium);
 }
 
 .breadcrumb-container {
@@ -113,14 +108,6 @@
   }
 }
 
-ul.tags {
-  gap: unset;
-  margin-top: .2rem;
-  margin-bottom: 1.5em;
-  font-family: var(--codeFont);
-  font-size: var(--font-size-medium);
-}
-
 sup .internet {
   background-color: transparent;
   padding: 0;
@@ -139,34 +126,20 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-} 
-
-/* Adjust explorer */
-.explorer{
-  margin: 1rem 0;
-  & h2 {
-    font-size: var(--font-size-large);
-    font-family: "Ysabeau SC";
-  }
 }
 
-.explorer-content{
-  margin-top: 1rem;
-  font-size: var(--font-size-large);
-  font-family: var(--UIFontLight);
-}
-.folder-container div>a {
-  font-family: var(--UIFont);
-  font-size: var(--font-size-large);
-}
-div#explorer-content>ul {
-  margin-top: .75em;
-}
-div#explorer-content ul li {
-  margin-bottom: .75em;
+.page>#quartz-body footer {
+  font-family: "Ysaebau SC";
+  font-size: var(--font-size-medium);
 }
 
-/* Adjust overall font size for recent notes section */
+
+/** Left sider */
+.page-title{
+  font-size: 1.5rem;
+  // margin-bottom: 1rem;
+}
+
 .recent-notes {  
   margin: 1.5rem 0 0;
   & > p {
@@ -196,6 +169,29 @@ div#explorer-content ul li {
       }
     }
   }
+}
+
+.explorer{
+  margin: 1rem 0;
+  & h2 {
+    font-size: var(--font-size-large);
+    font-family: "Ysabeau SC";
+  }
+}
+.explorer-content{
+  margin-top: 1rem;
+  font-size: var(--font-size-large);
+  font-family: var(--UIFontLight);
+}
+.folder-container div>a {
+  font-family: var(--UIFont);
+  font-size: var(--font-size-large);
+}
+div#explorer-content>ul {
+  margin-top: .75em;
+}
+div#explorer-content ul li {
+  margin-bottom: .75em;
 }
 
 /** right sider */
