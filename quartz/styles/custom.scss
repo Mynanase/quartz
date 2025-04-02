@@ -11,6 +11,8 @@
 @use "./fonts/LXGWBright-Regular.css"; //
 @use "./fonts/MapleMonoCN.css";
 @use "./fonts/DouyinSansBold.css"; // DouyinSans
+@use "./fonts/MaokenZhuyuanTi-2.css"; // MaokenZhuyuanTi
+@use "./fonts/YouSheYuFeiTeJianKangTi-2.css"; // YouSheYuFeiTeJianKangTi
 
 @font-face {
     font-family: "Symbols Nerd Font Mono";
@@ -36,21 +38,15 @@
   font-style: normal;
   font-display:swap;
 }
-@font-face {
-  font-family: "Kerox";
-  src: url('../static/fonts/Kerax-NonCommercial.woff2') format('woff2');
-  font-style: normal;
-  font-display:swap;
-}
 
 :root {
   --font-size-medium: 14px;
   --font-size-large: 16px;
 
   
-  --UIFont: "DouyinSans";
+  --UIFont: "YouSheYuFeiTeJianKangTi";
   --codeFont: "Iosevka Nerd Font Mono" !important;
-  --headerFont: "DouyinSans" !important;
+  --headerFont: "YouSheYuFeiTeJianKangTi" !important;
   --bodyFont: "LXGW Bright" !important;
 }
 
