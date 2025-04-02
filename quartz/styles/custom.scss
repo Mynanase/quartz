@@ -41,17 +41,13 @@
   --bodyFont: "QiushuiShotai Bright" !important;
 }
 
-tbody, li, p {
-  line-height: 150%;
-}
-
 .page {
   max-width: 100%;
 }
 
 .page-title{
-  font-size: 1.25em;
-  margin-bottom: 1em;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .page>#quartz-body .sidebar{
@@ -83,18 +79,18 @@ tbody, li, p {
 
 .breadcrumb-container {
   font-family: var(--UIFont);
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
 }
 
 .article-title {
   font-size: 1.5em;
-  margin: .5rem 0 0em;
+  margin: 1rem 0 0em;
 }
 
 .content-meta {
   font-family: var(--codeFont);    
   font-size: var(--font-size-medium);
-  letter-spacing: 0.02em; 
+  // letter-spacing: 0.02em; 
   // color: var(--secondary);
   margin-bottom: 2em;
   .update-icon {
@@ -133,7 +129,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 
 /* Adjust explorer */
 .explorer{
-  margin: 2em 0 1em;
+  margin: 1em 0 1em;
 }
 .explorer-content{
   margin-top: 1em;
@@ -152,14 +148,15 @@ div#explorer-content ul li {
 
 /* Adjust overall font size for recent notes section */
 .recent-notes {  
-  margin: 2em 0 1rem;
+  margin: 2rem 0 1rem;
   & > h3 {
+    margin: 0;
     font-size: var(--font-size-large);
   }
   & > ul.recent-ul {
     margin-top: 1rem;
     li { 
-      margin: .75em 0;
+      margin: .5rem 0;
       .section {
         & > .desc > h3 > a{
           font-size: var(--font-size-large);
