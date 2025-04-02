@@ -152,7 +152,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 
   & > p {
     margin: .5rem 0;
-    font-family: "Ysabeau SC";
+    font-family: var(--codeFont);
   }
 
   &>h3 {
@@ -251,7 +251,9 @@ button.toc-header {
   font-size: var(--font-size-large);
   font-family: var(--UIFont);
   font-style: normal;
-
+  & .depth-1 {
+    font-family: var(--UIFontLight);
+  }
   &>ul {
     margin: .5em 0;
   }
