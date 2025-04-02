@@ -49,10 +49,10 @@
   --font-size-medium: 14px;
   --font-size-large: 16px;
 
-  // --UIFontLight: "TsangerYuYangT W02";
+  --UIFontLight: "TsangerYuYangT W02";
   --UIFont: "TsangerYuMo W02";
   // --UIFontBold: "TsangerYuMo W03";
-  --codeFont: "Iosevka Nerd Font Mono" !important;
+  --codeFont: "Iosevka Nerd Font Mono", "LXGW Neo XiHei" !important;
   --headerFont: "TsangerYuMo W02" !important;
   --bodyFont: "LXGW Bright" !important;
 }
@@ -136,7 +136,7 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 }
 
 .page>#quartz-body footer {
-  font-family: "Ysaebau SC";
+  font-family: "Ysabeau SC";
   font-size: var(--font-size-medium);
 }
 
@@ -150,8 +150,9 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
 .recent-notes {
   margin: 1.5rem 0 0;
 
-  &>p {
+  & > p {
     margin: .5rem 0;
+    font-family: "Ysabeau SC";
   }
 
   &>h3 {
@@ -193,15 +194,15 @@ mjx-container.MathJax[jax="SVG"][display="true"] {
   }
 }
 
-.explorer-content {
-  margin-top: 1rem;
-  font-size: var(--font-size-large);
-  font-family: var(--UIFont);
-}
-
 .folder-container div>a {
   font-family: var(--UIFont);
   font-size: var(--font-size-large);
+}
+
+.explorer-content {
+  margin-top: 1rem;
+  font-size: var(--font-size-large);
+  font-family: var(--UIFontLight);
 }
 
 div#explorer-content>ul {
