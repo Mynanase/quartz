@@ -1,5 +1,5 @@
 ---
-title: Kosmos's Blog
+title: 星系天文学
 filename:
 tags:
 categories:
@@ -8,3 +8,4 @@ share: true
 image:
 description:
 ---
+星系天文学相关的笔记。

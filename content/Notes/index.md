@@ -1,5 +1,5 @@
 ---
-title: Kosmos's Blog
+title: Notes
 filename:
 tags:
 categories:
@@ -8,3 +8,4 @@ share: true
 image:
 description:
 ---
+这里放我写的各种内容的笔记。

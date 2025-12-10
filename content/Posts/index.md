@@ -1,5 +1,5 @@
 ---
-title: Kosmos's Blog
+title: Posts
 filename:
 tags:
 categories:

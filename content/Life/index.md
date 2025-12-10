@@ -1,5 +1,5 @@
 ---
-title: Kosmos's Blog
+title: Life
 filename:
 tags:
 categories:
