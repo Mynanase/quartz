@@ -9,7 +9,7 @@ import fs from "fs"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Kosmos’Blog",
+    pageTitle: "Kosmos’s Blog",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,

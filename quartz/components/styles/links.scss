@@ -5,6 +5,7 @@
     padding-left: 0;
 
     & > li {
+      list-style: none;
       margin: 1rem 0;
       .section > .desc > h3 > a {
         background-color: transparent;
