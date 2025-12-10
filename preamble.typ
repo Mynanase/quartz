@@ -1,6 +1,10 @@
-#import "@preview/physica:0.9.7": *
+#set page(margin: 0pt, width: auto, height: auto)
+#show raw: set text(size: 1.25em)
 
-// Define a custom function to test preamble file loading
-#let mycustom(x) = $cal(C)(#x)$
+#import "@preview/physica:0.9.5": *
+#import "@preview/cetz:0.4.2": *
 
-
+// 定制化数学符号
+#let vb(x) = math.upright(math.bold(x))
+#let vu(x) = math.hat(math.upright(math.bold(x)))
+#set math.mat(delim: "[")
