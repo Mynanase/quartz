@@ -54,6 +54,11 @@ ul,
   }
 }
 
+.typst-display {
+  display: block;
+  margin: 1em auto;
+}
+
 article {
   > mjx-container.MathJax,
   blockquote > div > mjx-container.MathJax {
