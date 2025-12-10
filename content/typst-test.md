@@ -24,16 +24,6 @@ This test verifies that `preamble.typ` is loaded correctly. It should import `ph
 div bold(B) = 0
 ```
 
-s
-```math
-// Using custom function from preamble file
-mycustom("x")
-```
-
 ## Test Case: Standard Math
 
-Standard math should still work.
-
-$$
-mycustom("x")
-$$
+Standard math should still work.ß
