@@ -57,7 +57,10 @@ ul,
 .typst-display {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 1em 0;
+  width: 100%;
+  overflow-x: auto;
 }
 
 article {

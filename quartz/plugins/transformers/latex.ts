@@ -149,14 +149,14 @@ $ ${value} $
               type: "element",
               tagName: "div",
               properties: {
-                className: ["typst-display"],
+                className: ["typst-display", "math", "math-display"],
               },
               children: [rootChild],
             },
           ]
         } else {
           if (!rootChild.properties.className) rootChild.properties.className = []
-          rootChild.properties.className.push("typst-inline")
+          rootChild.properties.className.push("typst-inline", "math", "math-inline")
           result = [rootChild]
         }
       } catch (err) {
