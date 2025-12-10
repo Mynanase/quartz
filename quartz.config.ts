@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import fs from "fs"
 
 /**
  * Quartz 4 Configuration
@@ -71,7 +72,10 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
-      Plugin.Latex({ renderEngine: "typst" }),
+      Plugin.Latex({
+        renderEngine: "typst",
+        typstPreamble: fs.readFileSync("preamble.typ", "utf-8"),
+      }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
