@@ -55,8 +55,9 @@ ul,
 }
 
 .typst-display {
-  display: block;
-  margin: 1em auto;
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
 }
 
 article {

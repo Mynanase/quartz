@@ -144,14 +144,21 @@ $ ${value} $
         }
 
         if (displayMode) {
-          if (!rootChild.properties.className) rootChild.properties.className = []
-          rootChild.properties.className.push("typst-display")
+          result = [
+            {
+              type: "element",
+              tagName: "div",
+              properties: {
+                className: ["typst-display"],
+              },
+              children: [rootChild],
+            },
+          ]
         } else {
           if (!rootChild.properties.className) rootChild.properties.className = []
           rootChild.properties.className.push("typst-inline")
+          result = [rootChild]
         }
-
-        result = root.children
       } catch (err) {
         console.error("Typst compilation error:", err)
         result = [
