@@ -18,27 +18,30 @@ export default ((userOpts?: Partial<Options>) => {
   function Links({ allFiles, fileData, displayClass, cfg }: QuartzComponentProps) {
     const opts = { ...defaultOptions(cfg), ...userOpts }
     
-    const makeLink = (slug: string) => resolveRelative(fileData.slug, slug as SimpleSlug)
+    const makeLink = (slug: string) => {
+      const slugPath = fileData.slug!
+      return resolveRelative(slugPath, slug as SimpleSlug)
+    }
 
     return (
       <div class={`links ${displayClass ?? ""}`}>
         <h3>{opts.title}</h3>
         <ul>
           <li>
-            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Notes")}>Notes</a></h3>
-            <i>学习笔记与知识库</i>
-          </li>
-          <li>
             <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Posts")}>Posts</a></h3>
-            <i>博客文章与随笔</i>
+            <i>长推文与随笔</i>
           </li>
           <li>
-            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Projects")}>Projects</a></h3>
-            <i>我的个人项目</i>
+            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Notes")}>Notes</a></h3>
+            <i>学习笔记</i>
           </li>
           <li>
             <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Life")}>Life</a></h3>
-            <i>生活记录与碎碎念</i>
+            <i>生活记录</i>
+          </li>
+          <li>
+            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Research")}>My Research</a></h3>
+            <i>我的研究</i>
           </li>
           <li>
             <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("aboutme")}>About Me</a></h3>
