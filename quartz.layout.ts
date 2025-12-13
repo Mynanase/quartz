@@ -6,7 +6,23 @@ import { SimpleSlug } from "./quartz/util/path"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+  Component.Comments({
+    provider: 'giscus',
+    options: {
+      // from data-repo
+      repo: 'Mynanase/quartz',
+      // from data-repo-id
+      repoId: 'R_kgDOOIs5yg',
+      // from data-category
+      category: 'Announcements',
+      // from data-category-id
+      categoryId: 'DIC_kwDOOIs5ys4CoC4p',
+      // from data-lang
+      lang: 'en'
+    }
+  }),
+],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",
@@ -18,6 +34,7 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
+    // Component.Spacer(),
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
@@ -39,12 +56,12 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.DesktopOnly(Component.Links()),
+    Component.Links(),
     Component.DesktopOnly(Component.RecentNotes({
-      title: "最近更新",
-      limit: 5,
-      filter: (f) => f.slug!.startsWith("posts/") && f.slug! !== "posts/index" && !f.frontmatter?.noindex,
-      linkToMore: "posts" as SimpleSlug,
+    title: "最近更新",
+    limit: 5,
+    filter: (f) => f.slug!.startsWith("posts/") && f.slug! !== "posts/index" && !f.frontmatter?.noindex,
+    linkToMore: "posts" as SimpleSlug,
     })),
   ],
   right: [

@@ -21,8 +21,8 @@ interface LinkItem {
 }
 
 const links: LinkItem[] = [
-  { slug: "Posts" as SimpleSlug, title: "Posts", desc: "长推文与随笔" },
   { slug: "Notes" as SimpleSlug, title: "Notes", desc: "学习笔记" },
+  { slug: "Posts" as SimpleSlug, title: "Posts", desc: "长推文与随笔" },
   { slug: "Life" as SimpleSlug, title: "Life", desc: "生活记录" },
   { slug: "Research" as SimpleSlug, title: "My Research", desc: "我的研究" },
   // { slug: "aboutme" as SimpleSlug, title: "About Me", desc: "关于我" },
