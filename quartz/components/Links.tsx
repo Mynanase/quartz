@@ -14,6 +14,20 @@ const defaultOptions = (cfg: GlobalConfiguration): Options => ({
   title: "",
 })
 
+interface LinkItem {
+  slug: SimpleSlug
+  title: string
+  desc: string
+}
+
+const links: LinkItem[] = [
+  { slug: "Posts" as SimpleSlug, title: "Posts", desc: "长推文与随笔" },
+  { slug: "Notes" as SimpleSlug, title: "Notes", desc: "学习笔记" },
+  { slug: "Life" as SimpleSlug, title: "Life", desc: "生活记录" },
+  { slug: "Research" as SimpleSlug, title: "My Research", desc: "我的研究" },
+  // { slug: "aboutme" as SimpleSlug, title: "About Me", desc: "关于我" },
+]
+
 export default ((userOpts?: Partial<Options>) => {
   function Links({ allFiles, fileData, displayClass, cfg }: QuartzComponentProps) {
     const opts = { ...defaultOptions(cfg), ...userOpts }
@@ -27,26 +41,14 @@ export default ((userOpts?: Partial<Options>) => {
       <div class={`links ${displayClass ?? ""}`}>
         <h3>{opts.title}</h3>
         <ul>
-          <li>
-            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Posts")}>Posts</a></h3>
-            <i>长推文与随笔</i>
-          </li>
-          <li>
-            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Notes")}>Notes</a></h3>
-            <i>学习笔记</i>
-          </li>
-          <li>
-            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Life")}>Life</a></h3>
-            <i>生活记录</i>
-          </li>
-          <li>
-            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("Research")}>My Research</a></h3>
-            <i>我的研究</i>
-          </li>
-          <li>
-            <h3 style={{marginTop: 0, marginBottom: 0}}><a href={makeLink("aboutme")}>About Me</a></h3>
-            <i>关于我</i>
-          </li>
+          {links.map((link) => (
+            <li>
+              <h3 style={{ marginTop: 0, marginBottom: 0 }}>
+                <a href={makeLink(link.slug)}>{link.title}</a>
+              </h3>
+              <i>{link.desc}</i>
+            </li>
+          ))}
         </ul>
       </div>
     )

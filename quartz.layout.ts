@@ -43,8 +43,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.RecentNotes({
       title: "最近更新",
       limit: 5,
-      filter: (f) => !f.slug!.startsWith("tags/") && f.slug! !== "index" && !f.frontmatter?.noindex,
-      linkToMore: "tags" as SimpleSlug,
+      filter: (f) => f.slug!.startsWith("posts/") && f.slug! !== "posts/index" && !f.frontmatter?.noindex,
+      linkToMore: "posts" as SimpleSlug,
     })),
   ],
   right: [
