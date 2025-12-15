@@ -111,4 +111,8 @@ PageList.css = `
 .section > .tags {
   margin: 0;
 }
+
+.section > .meta {
+  font-family: var(--codeFont);
+}
 `

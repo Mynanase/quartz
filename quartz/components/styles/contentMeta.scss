@@ -1,6 +1,10 @@
 .content-meta {
   margin-top: 0;
   color: var(--darkgray);
+  
+  time, span {
+    font-family: var(--codeFont);
+  }
 
   &[show-comma="true"] {
     > *:not(:last-child) {
