@@ -1,13 +1,10 @@
 ---
-title: Lifes
-description: Life notes and reflections
+title: Life
+description: Choose Lifes?
 date: 2024-01-01
 lastmod: 2024-01-01
 tags:
-    - life
-    - notes
 categories:
-    - Lifes
 draft: false
 ---
 
