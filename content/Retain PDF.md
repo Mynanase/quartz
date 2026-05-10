@@ -6,13 +6,13 @@ tags:
   - pdf
   - ocr
   - app
-status:
-description:
-created: 2026-05-07T03:27:44+08:00
-modified: 2026-05-11T02:53:40+08:00
 categories:
   - Notes
+status:
 share: true
+description:
+created: 2026-05-07T03:27:44+08:00
+modified: 2026-05-11T04:00:02+08:00
 ---
 
 官方网站上对 [Retain PDF](https://github.com/wxyhgk/retain-pdf) 的定义是一款 **PDF 保留排版翻译工具**。在我的体验下来，它的表现在同类工具中非常优秀：
@@ -20,9 +20,9 @@ share: true
 - 对于开发者，项目各个部分是解耦的，非常方便接入自己的工作流。
 - 在保留排版翻译领域，效果非常好，可以硬刚市面上常见模型。
 
-![[../00 Assets/2026-05-07_04-05-55.png|615]]
+![[./.assets/2026-05-07_04-05-55.png|615]]
 
-![[../00 Assets/Pasted image 20260507043700.png|Pasted image 20260507043700.png]]
+![[./.assets/Pasted image 20260507043700.png|Pasted image 20260507043700.png]]
 
 ## 项目的整体流程
 
@@ -39,6 +39,6 @@ share: true
 
 据作者描述，是为了数学公式显示的兼容性，暂时保留了原来的文字层。
 
-![[../00 Assets/2026-05-07_04-12-35.png|605]]
+![[./.assets/2026-05-07_04-12-35.png|605]]
 
 **书签在翻译之后消失**
