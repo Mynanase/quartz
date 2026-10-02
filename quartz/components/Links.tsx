@@ -1,16 +1,12 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { FullSlug, SimpleSlug, resolveRelative } from "../util/path"
-import { QuartzPluginData } from "../plugins/vfile"
-import { byDateAndAlphabetical } from "./PageList"
+import { SimpleSlug, resolveRelative } from "../util/path"
 import style from "./styles/links.scss"
-import { Date, getDate } from "./Date"
-import { GlobalConfiguration } from "../cfg"
 
 interface Options {
   title: string
 }
 
-const defaultOptions = (cfg: GlobalConfiguration): Options => ({
+const defaultOptions = (): Options => ({
   title: "",
 })
 
@@ -29,9 +25,9 @@ const links: LinkItem[] = [
 ]
 
 export default ((userOpts?: Partial<Options>) => {
-  function Links({ allFiles, fileData, displayClass, cfg }: QuartzComponentProps) {
-    const opts = { ...defaultOptions(cfg), ...userOpts }
-    
+  function Links({ fileData, displayClass }: QuartzComponentProps) {
+    const opts = { ...defaultOptions(), ...userOpts }
+
     const makeLink = (slug: string) => {
       const slugPath = fileData.slug!
       return resolveRelative(slugPath, slug as SimpleSlug)

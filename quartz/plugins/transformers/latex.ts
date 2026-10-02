@@ -23,8 +23,10 @@ interface Options {
   typstPreamble: string
 }
 
+// mathjax macros
+export type Args = boolean | number | string | null
 interface MacroType {
-  [key: string]: string
+  [key: string]: string | Args[]
 }
 
 let compilerIns: NodeCompiler
@@ -32,7 +34,7 @@ let compilerIns: NodeCompiler
 const rehypeTypstCustom = (options: any) => {
   const preamble = options.preamble || ""
 
-  return async (tree: any, file: any) => {
+  return async (tree: any) => {
     const matches: any[] = []
     visitParents(tree, "element", (element, parents) => {
       const classes = Array.isArray(element.properties?.className)
@@ -120,7 +122,8 @@ $ ${value} $
           if (query && query.length > 0) {
             const val = query[0].value
             if (typeof val === "number") baselinePosition = val
-            else if (typeof val === "object" && val !== null && "pt" in val) baselinePosition = val.pt
+            else if (typeof val === "object" && val !== null && "pt" in val)
+              baselinePosition = val.pt
             else if (typeof val === "string") baselinePosition = parseFloat(val)
           }
         }
@@ -197,11 +200,20 @@ export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
         case "typst": {
           return [[rehypeTypstCustom, { ...opts?.typstOptions, preamble: opts?.typstPreamble }]]
         }
+        default:
         case "mathjax": {
-          return [[rehypeMathjax, { macros, ...(opts?.mathJaxOptions ?? {}) }]]
-        }
-        default: {
-          return [[rehypeMathjax, { macros, ...(opts?.mathJaxOptions ?? {}) }]]
+          return [
+            [
+              rehypeMathjax,
+              {
+                ...(opts?.mathJaxOptions ?? {}),
+                tex: {
+                  ...(opts?.mathJaxOptions?.tex ?? {}),
+                  macros,
+                },
+              },
+            ],
+          ]
         }
       }
     },
