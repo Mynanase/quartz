@@ -37,6 +37,7 @@ Build pipeline (`quartz/build.ts`): glob content → **transformers** (Markdown 
 - CI workflows are gated on `github.repository == 'jackyzha0/quartz'`, so **CI does not run on this fork** — run `npm run check` and `npm test` locally before pushing.
 - `CustomOgImages` emitter significantly slows builds (see comment in `quartz.config.ts`); comment it out for fast iteration.
 - LaTeX is rendered with the **typst** engine using `preamble.typ` at the repo root — keep that file present, the config reads it at import time.
+- The typst stack is **locally customized and intentionally diverged from upstream**: `rehypeTypstCustom` in `quartz/plugins/transformers/latex.ts` (preamble injection, inline-math baseline alignment, em-based sizing) and `.typst-display` styles in `base.scss` (flex centering + horizontal scroll for wide equations) have no upstream equivalent. When merging upstream, preserve them; upstream's typst CSS (`g.typst-text` / `path.typst-shape` color rules) is complementary — the local SVG output uses the same class names, so both apply.
 - Default `quartz build` targets `content/`; anything under ignored folders (`private`, `templates`, `.obsidian`) is excluded from the build.
 
 ## Docs to read first
