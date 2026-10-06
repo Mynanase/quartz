@@ -1,6 +1,5 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import { SimpleSlug } from "./quartz/util/path"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -34,7 +33,6 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    // Component.Spacer(),
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
@@ -56,15 +54,18 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Links(),
-    Component.DesktopOnly(
-      Component.RecentNotes({
-        title: "最近更新",
-        limit: 5,
-        // filter: (f) => f.slug!.startsWith("posts/") && f.slug! !== "posts/index" && !f.frontmatter?.noindex,
-        linkToMore: "Notes" as SimpleSlug,
-      }),
-    ),
+    Component.Explorer(),
+    // --- 自定义侧边栏(已回退到默认 Explorer,需要时取消注释,
+    // 并恢复顶部 import { SimpleSlug } from "./quartz/util/path") ---
+    // Component.Links(),
+    // Component.DesktopOnly(
+    //   Component.RecentNotes({
+    //     title: "最近更新",
+    //     limit: 5,
+    //     // filter: (f) => f.slug!.startsWith("posts/") && f.slug! !== "posts/index" && !f.frontmatter?.noindex,
+    //     linkToMore: "Notes" as SimpleSlug,
+    //   }),
+    // ),
   ],
   right: [
     Component.Graph(),
@@ -88,7 +89,8 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.DesktopOnly(Component.RecentNotes()),
+    Component.Explorer(),
+    // Component.DesktopOnly(Component.RecentNotes()),
   ],
   right: [],
 }
