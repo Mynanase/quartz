@@ -18,7 +18,6 @@ updated: 2026-01-16T16:49:16+08:00
 ## 微信聊天数据提取
 
 最近发现了一个项目可以非常轻易的提取微信的聊天记录。它就是
-
 > [!info] [WeFlow](https://github.com/hicccc77/WeFlow)
 > WeFlow 是一个**完全本地**的微信**实时**聊天记录查看、分析与导出工具
 
@@ -41,10 +40,11 @@ updated: 2026-01-16T16:49:16+08:00
 
 - 服务器上不方便使用 huggaface 转而使用魔塔（ModelScope）
 
+
+
 ## 机器人框架
 
 现在打算使用 AstrBot 作为机器人的框架。目前能够想到的问题有
-
 - [x] 如何在桌面端写插件？
 - [x] 在没有公网 IP 的情况下，如何通过设置代理，获得固定的 IP，这样才能通过 QQ 官方机器人的 IP 白名单检测。
 - [ ] 学习一下 AstrBot 人格风格应该怎么定义
@@ -52,14 +52,12 @@ updated: 2026-01-16T16:49:16+08:00
 ## Astrbot 安装和配置
 
 [利用 docker 部署](https://docs.astrbot.app/deploy/astrbot/docker.html)，首先 clone 仓库到本地：
-
 ```
 git clone https://github.com/AstrBotDevs/AstrBot
 cd AstrBot
 ```
 
 然后，运行 Compose：
-
 ```
 sudo docker compose up -d
 ```
@@ -96,3 +94,4 @@ sudo docker compose up -d
 如果服务器在国内，机器人无法和 Discord 建立通信。这个时候需要在服务器上部署代理服务。然后在 AstrBot 配置界面填写代理链接。
 
 ## 插件
+
