@@ -14,7 +14,6 @@ modified: 2026-10-07T03:53:26+08:00
 我现在感觉，随着大模型的能力越来越强，需要在 Agent 的结构方面做一些简化。
 
 而我认为比较重要的几个功能有：
-
 1. 记忆系统
 2. Subagent
 
@@ -47,7 +46,6 @@ PI Agent 由四个核心包构成，其中 `pi-ai / pi-agent-core / pi-coding-ag
 `pi-tui` 是一个与 Agent 无关的终端 UI 库。
 
 PI 的扩展可以实现：
-
 - 自定义工具 — 定义新的 tool，带 TypeBox schema 参数校验
 - UI 组件 — 在终端里嵌入自定义界面
 - 斜杠命令 — 注册新的 `/` 命令
@@ -55,15 +53,23 @@ PI 的扩展可以实现：
 - 主题 — 定制 TUI 外观
 - 提示词模板 — 可复用的 prompt 片段
 
+
+
+
 ## Plugin
 
 ### npm:pi-web-access
 
+
+
 ### npm:pi-subagents
+
+
 
 ### pi-conversation-outline
 
 右侧大纲
+
 
 ### pi-session-peek
 
