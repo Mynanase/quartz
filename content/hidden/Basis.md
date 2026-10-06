@@ -9,11 +9,12 @@ share: true
 image:
 description:
 created: 2025-10-16T23:37:45+08:00
+modified: 2026-05-10T07:13:37+08:00
 updated: 2025-12-12T16:09:36+08:00
 ---
 
 ## 基本假设
-
+ 
 连续性假设：流体能够用两个光滑连续的场描述：
 - 密度 $rho(vb(x),t)$ 
 - 速度场 $vb(u)(vb(x),t)$
@@ -40,7 +41,9 @@ $t$ 整体作为另一个参数影响速度场从而影响流线形状。
 
 假设存在一个标量场 $phi.alt (vb(x), t)$，它告诉我们固定点 $vb(x)$ 处的值随着时间 $t$ 的改变。如果我们跟随一条迹线 $vb(x)(t)$，也就是拉格朗日视角，那么该场随着时间的演化写为：
 $$
-dv(,t) phi.alt(vb(x)(t), t) = pdv(phi.alt,t) + dot(vb(x)) dprod grad phi.alt = pdv(phi.alt,t) + vb(u) dprod grad phi.alt 
+dv(,t) phi.alt(vb(x)(t), t) 
+&= pdv(phi.alt,t) + dot(vb(x)) dprod grad phi.alt \
+&= pdv(phi.alt,t) + vb(u) dprod grad phi.alt 
 $$
 附加项表示 $vb(x)$ 处的 $phi.alt$ 的值由于流体流动被带走的部分，这个传输的过程成为平流 (*advection*) 而附加项 $vb(u) dprod grad phi.alt$ 成为平流变化率。定义质量微分 (*material derivative*)：
 $$
