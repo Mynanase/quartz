@@ -280,12 +280,19 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
       } else if (cfg.theme.fontOrigin === "googleFonts" && !cfg.theme.cdnCaching) {
         // when cdnCaching is true, we link to google fonts in Head.tsx
         const theme = ctx.cfg.configuration.theme
-        const response = await fetch(googleFontHref(theme))
+        // 现代浏览器 UA：让 Google Fonts 返回 woff2 分片（体积约为 TTF 的一半）
+        const browserUA =
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+        const response = await fetch(googleFontHref(theme), {
+          headers: { "User-Agent": browserUA },
+        })
         googleFontsStyleSheet = await response.text()
 
         if (theme.typography.title) {
           const title = ctx.cfg.configuration.pageTitle
-          const response = await fetch(googleFontSubsetHref(theme, title))
+          const response = await fetch(googleFontSubsetHref(theme, title), {
+            headers: { "User-Agent": browserUA },
+          })
           googleFontsStyleSheet += `\n${await response.text()}`
         }
 
