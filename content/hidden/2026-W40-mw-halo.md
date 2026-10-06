@@ -3,10 +3,10 @@ title: 2026-W40-mw-halo
 filename:
 tags:
 status:
+share: true
 description:
 created: 2026-10-03T23:27:57+08:00
-modified: 2026-10-07T03:55:46+08:00
-share: true
+modified: 2026-10-07T04:52:59+08:00
 ---
 
 Bundle 的实际目标是让束内轨道的密度响应 $a_j$​ 相似，因为求解时它们会被同一个权重 $u_k$​ 绑定，这样损失是最小的。
