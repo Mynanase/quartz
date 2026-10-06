@@ -67,7 +67,7 @@ sudo docker compose up -d
 ### 模型提供商
 
 首先配置模型提供商，分别需要配置以下 6 种：
-![[../00 Assets/2026-05-13_03-11-43.png|2026-05-13_03-11-43.png]]
+![[undefinedcontent/img/2026-05-13_03-11-43.png|2026-05-13_03-11-43.png]]
 
 - 对话可以用 Deepseek 和 Siliconflow。由于 Deepseek 没有多模态能力，可以配置一个 Siliconflow 的 `GLM-4.6V`
 - STT 和 TTS 使用 [小米的 MIMO](https://platform.xiaomimimo.com/console/balance)
@@ -88,9 +88,9 @@ sudo docker compose up -d
 
 - 登录 [Discord Developer Portal](https://www.google.com/search?q=https://discord.com/developers/applications&authuser=1)，创建 APP。
 - 左侧点击 Bot 页面，重置并获取令牌，并且开启三个选项
-  ![[../00 Assets/2026-05-13_03-32-03.png|510]]
+  ![[undefinedcontent/img/2026-05-13_03-32-03.png|510]]
 - Oauth2 界面，范围选择 Bot。为了简单起见，勾选管理员权限，然后翻到底部，复制 URL。
-  ![[../00 Assets/2026-05-13_03-33-47.png|519]]
+  ![[undefinedcontent/img/2026-05-13_03-33-47.png|519]]
 - 在 AstrBot Bot 配置界面，填写 Discord Bot Token。
 
 如果服务器在国内，机器人无法和 Discord 建立通信。这个时候需要在服务器上部署代理服务。然后在 AstrBot 配置界面填写代理链接。
