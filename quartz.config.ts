@@ -75,6 +75,18 @@ const config: QuartzConfig = {
       Plugin.Latex({
         renderEngine: "typst",
         typstPreamble: fs.readFileSync("preamble.typ", "utf-8"),
+        // typst 编译失败时的 MathJax 兜底宏（LaTeX physics 包风格）
+        customMacros: {
+          "\\pqty": ["\\left(#1\\right)", 1],
+          "\\bqty": ["\\left[#1\\right]", 1],
+          "\\abs": ["\\left|#1\\right|", 1],
+          "\\vb": ["\\mathbf{#1}", 1],
+          "\\vu": ["\\hat{\\mathbf{#1}}", 1],
+          "\\pdv": ["\\frac{\\partial #1}{\\partial #2}", 2],
+          "\\curl": "\\nabla\\times",
+          "\\grad": "\\nabla",
+          "\\div": "\\nabla\\cdot",
+        },
       }),
     ],
     filters: [Plugin.RemoveDrafts()],

@@ -34,7 +34,7 @@ let compilerIns: NodeCompiler
 const rehypeTypstCustom = (options: any) => {
   const preamble = options.preamble || ""
 
-  return async (tree: any) => {
+  return async (tree: any, file: any) => {
     const matches: any[] = []
     visitParents(tree, "element", (element, parents) => {
       const classes = Array.isArray(element.properties?.className)
@@ -53,6 +53,11 @@ const rehypeTypstCustom = (options: any) => {
 
     compilerIns ||= NodeCompiler.create()
     const $typst = compilerIns
+
+    // 先编译收集全部结果；只要有一条失败，整篇笔记都不替换，
+    // 全部交给链路中后续的 rehype-mathjax 渲染（保证篇内引擎/风格一致）
+    const pending: { scope: any; parent: any; result: any[] }[] = []
+    const failures: string[] = []
 
     for (const { element, parents } of matches) {
       const classes = element.properties.className || []
@@ -107,9 +112,10 @@ $ ${value} $
         const docRes = $typst.compile({ mainFileContent })
         if (!docRes.result) {
           const takenDiags = docRes.takeDiagnostics()
-          if (takenDiags) {
+          if (takenDiags && failures.length === 0) {
+            // 只在首个失败时打印诊断，避免日志噪声
             const diags = $typst.fetchDiagnostics(takenDiags)
-            console.error("Typst compilation diagnostics:", JSON.stringify(diags, null, 2))
+            console.warn("Typst compilation diagnostics:", JSON.stringify(diags, null, 2))
           }
           throw new Error("Typst compilation failed")
         }
@@ -152,32 +158,35 @@ $ ${value} $
               type: "element",
               tagName: "div",
               properties: {
-                className: ["typst-display", "math", "math-display"],
+                // 不携带 math-display/math-inline：这些 class 会触发后续
+                // rehype-mathjax 接管；仅失败的公式（保留 language-math）才应被兜底
+                className: ["typst-display", "math"],
               },
               children: [rootChild],
             },
           ]
         } else {
           if (!rootChild.properties.className) rootChild.properties.className = []
-          rootChild.properties.className.push("typst-inline", "math", "math-inline")
+          rootChild.properties.className.push("typst-inline", "math")
           result = [rootChild]
         }
-      } catch (err) {
-        console.error("Typst compilation error:", err)
-        result = [
-          {
-            type: "element",
-            tagName: "span",
-            properties: {
-              className: ["typst-error"],
-              style: "color: red",
-              title: String(err),
-            },
-            children: [{ type: "text", value: `Typst Error: ${err}` }],
-          },
-        ]
+      } catch {
+        failures.push(value)
+        continue
       }
 
+      pending.push({ scope, parent, result })
+    }
+
+    if (failures.length > 0) {
+      console.warn(
+        `[Latex] ${file?.data?.filePath ?? "(unknown file)"}: ${failures.length}/${matches.length} formulas failed typst; ` +
+          `rendering the whole note with MathJax instead (e.g. ${failures[0].slice(0, 60)})`,
+      )
+      return
+    }
+
+    for (const { scope, parent, result } of pending) {
       const index = parent.children.indexOf(scope)
       parent.children.splice(index, 1, ...result)
     }
@@ -198,7 +207,20 @@ export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
           return [[rehypeKatex, { output: "html", macros, ...(opts?.katexOptions ?? {}) }]]
         }
         case "typst": {
-          return [[rehypeTypstCustom, { ...opts?.typstOptions, preamble: opts?.typstPreamble }]]
+          // typst 优先；编译失败的公式保留原样，由随后的 MathJax 兜底
+          return [
+            [rehypeTypstCustom, { ...opts?.typstOptions, preamble: opts?.typstPreamble }],
+            [
+              rehypeMathjax,
+              {
+                ...(opts?.mathJaxOptions ?? {}),
+                tex: {
+                  ...(opts?.mathJaxOptions?.tex ?? {}),
+                  macros,
+                },
+              },
+            ],
+          ]
         }
         default:
         case "mathjax": {
