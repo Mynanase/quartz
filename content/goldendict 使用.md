@@ -8,11 +8,11 @@ share: true
 image:
 description:
 created: 2024-10-14T06:55:22+08:00
+modified: 2026-10-07T07:32:06+08:00
 updated: 2025-03-24T22:31:48+08:00
 ---
 
 ## Goldendict 使用
-
 ### 导入词典
 
 首先通过 `编辑` → `词典` 进入词典配置界面。
