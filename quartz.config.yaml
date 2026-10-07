@@ -26,25 +26,25 @@ configuration:
     # Cupertino(iOS 风格)内联色板 —— 从 @quartz-themes/cupertino 提取映射(临时重建快照)
     colors:
       lightMode:
-        light: "#ffffff"
-        lightgray: "#cfd0d2"
-        gray: "#858587"
-        darkgray: "#333338"
-        dark: "#1c1c1e"
-        secondary: "#9873f7"
-        tertiary: "#8a5cf5"
-        highlight: rgba(138, 92, 245, 0.12)
-        textHighlight: rgba(255, 208, 0, 0.4)
+        light: "#faf8f8"
+        lightgray: "#e5e5e5"
+        gray: "#b8b8b8"
+        darkgray: "#4e4e4e"
+        dark: "#2b2b2b"
+        secondary: "#284b63"
+        tertiary: "#84a59d"
+        highlight: rgba(143, 159, 169, 0.15)
+        textHighlight: "#fff23688"
       darkMode:
-        light: "#1d1d20"
-        lightgray: "#4d4d51"
-        gray: "#99999b"
-        darkgray: "#d2d2d2"
-        dark: "#f5f5f7"
-        secondary: "#a68af9"
-        tertiary: "#8a5cf5"
-        highlight: rgba(138, 92, 245, 0.18)
-        textHighlight: rgba(255, 208, 0, 0.4)
+        light: "#161618"
+        lightgray: "#393639"
+        gray: "#646464"
+        darkgray: "#d4d4d4"
+        dark: "#ebebec"
+        secondary: "#7b97aa"
+        tertiary: "#84a59d"
+        highlight: rgba(143, 159, 169, 0.15)
+        textHighlight: "#b3aa0288"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
