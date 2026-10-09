@@ -1,3 +1,224 @@
-@use "./variables.scss" as *;
+// 字体栈、颜色和组件分组由 quartz.config.yaml 配置；阅读宽度与字号在这里调整。
 
-// put your custom CSS here!
+// 默认页面：正文 720px，两侧栏各 280px；32px 栏间距 + 24px 侧栏内边距形成 56px 留白。
+// 仅覆盖 default frame，保留全宽、画布与 404 页面各自的布局。
+.page[data-frame="default"] {
+  --reading-width: 720px;
+  --reading-sidebar-width: 280px;
+  --reading-column-gap: 32px;
+  --reading-page-padding: 24px;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(
+    var(--reading-width) + 2 * var(--reading-sidebar-width) + 2 * var(--reading-column-gap) + 2 *
+      var(--reading-page-padding)
+  );
+  padding-inline: var(--reading-page-padding);
+
+  & > #quartz-body {
+    padding: 0;
+    grid-template-columns: var(--reading-sidebar-width) minmax(0, 1fr) var(--reading-sidebar-width);
+    column-gap: var(--reading-column-gap);
+
+    & > .center,
+    & > footer {
+      min-width: 0;
+      width: 100%;
+      max-width: var(--reading-width);
+    }
+
+    & > .sidebar {
+      min-width: 0;
+    }
+  }
+
+  @media (width > 800px) {
+    & > #quartz-body > .sidebar {
+      padding-inline: 24px;
+    }
+  }
+
+  // 沿用 Quartz 的两栏结构，将右栏移至正文下方；三栏从 1400px 开始。
+  @media (800px < width < 1400px) {
+    max-width: calc(
+      var(--reading-width) + var(--reading-sidebar-width) + var(--reading-column-gap) + 2 *
+        var(--reading-page-padding)
+    );
+
+    & > #quartz-body {
+      grid-template-columns: var(--reading-sidebar-width) minmax(0, 1fr);
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas:
+        "grid-sidebar-left grid-header"
+        "grid-sidebar-left grid-center"
+        "grid-sidebar-left grid-sidebar-right"
+        "grid-sidebar-left grid-footer";
+
+      & > .sidebar.right {
+        position: static;
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+        padding: 0;
+
+        & > * {
+          flex: 1;
+          min-width: 0;
+          max-height: 24rem;
+        }
+
+        & > .toc {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (width <= 800px) {
+    max-width: calc(var(--reading-width) + 2 * var(--reading-page-padding));
+
+    & > #quartz-body {
+      grid-template-columns: minmax(0, 1fr);
+      column-gap: 5px;
+    }
+  }
+}
+
+// 阅读排版试验：下面的注释保留正文 18px / 1.75 与标题行高、间距方案。
+// 当前正文使用 18px / 1.6，标题字号按正文的 em 比例缩放。
+// :root {
+//   --article-font-size: 1.125rem;
+//   --article-line-height: 1.75;
+// }
+//
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 正文 18px，行高随字号缩放。
+.page .center > article {
+  font-size: 18px;
+  line-height: 1.6;
+
+  p:not(.callout-title-inner > p),
+  li,
+  tbody,
+  a.internal {
+    line-height: inherit;
+  }
+
+  // font-size 的 em 参照父元素字号；正文 18px 时，各级为 32.4 / 26.1 / 21.6 / 18.9 / 18px。
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.45em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  h4 {
+    font-size: 1.05em;
+  }
+
+  h5,
+  h6 {
+    font-size: 1em;
+  }
+}
+
+//
+// .page .center > article {
+//   font-size: var(--article-font-size);
+//   line-height: var(--article-line-height);
+//
+//   p:not(.callout-title-inner > p),
+//   li,
+//   tbody,
+//   a.internal {
+//     line-height: inherit;
+//   }
+//
+//   h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   h6 {
+//     line-height: 1.35;
+//   }
+//
+//   & > :is(h1, h2, h3, h4, h5, h6) {
+//     margin-top: 2em;
+//     margin-bottom: 0.75em;
+//   }
+// }
+
+// 日期沿用原字号；整段保持单行，标题和其他正文仍可折行。
+.content-meta time,
+.recent-notes .meta time,
+li.section-li > .section > .meta time {
+  white-space: nowrap;
+}
+
+// 给空日期的文件夹行也保留日期列；中文日期可按内容宽度扩展。
+li.section-li > .section {
+  grid-template-columns: minmax(9em, max-content) minmax(0, 3fr) minmax(0, 1fr);
+  column-gap: 1rem;
+  align-items: baseline;
+
+  & > .meta {
+    margin: 0;
+  }
+
+  & > .desc {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 600px) {
+  li.section-li > .section {
+    grid-template-columns: minmax(9em, max-content) minmax(0, 1fr);
+  }
+}
+
+// 自动外边距居中短公式，宽公式从左侧开始滚动，避免 flex 居中裁掉开头。
+.typst-display {
+  justify-content: flex-start;
+
+  & > .typst-doc {
+    flex-shrink: 0;
+    margin-inline: auto;
+  }
+}
+
+// Typst 字形描边补偿：保留 Latin Modern Math 的细笔画，同时稍微增加小字号的可读性。
+// 宽度以字形局部设计单位（1000upm）计量，并随公式/上下标字号同比缩放。
+// 从 22 调到 16：额外描边减少约 27%，不是将整个字形减细 27%。设为 0 关闭。
+// 只碰 outline_glyph，不覆盖分数线/根号等 typst-shape 自带的 stroke-width。
+:root {
+  --typst-stroke-width: 18;
+}
+
+// Typst 公式颜色跟随正文 --darkgray（Quartz 默认：亮色 #4e4e4e / 暗色 #d4d4d4）。
+// 用局部字形描边补偿细笔画，避免再叠加 base.scss 中更深的 --dark。
+.typst-doc {
+  --glyph_fill: var(--darkgray);
+  --glyph_stroke: var(--darkgray);
+}
+
+path[class~="typst-shape"] {
+  stroke: var(--darkgray);
+}
+
+path.outline_glyph,
+.outline_glyph path {
+  stroke-width: var(--typst-stroke-width);
+  stroke-linejoin: round;
+}

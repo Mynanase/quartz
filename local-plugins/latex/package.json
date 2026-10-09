@@ -1,0 +1,23 @@
+{
+  "name": "latex-typst",
+  "version": "1.0.0",
+  "description": "LaTeX math via Typst with preamble.typ injection and whole-note MathJax fallback (Quartz v4 port)",
+  "type": "module",
+  "main": "./index.js",
+  "license": "MIT",
+  "private": true,
+  "quartz": {
+    "name": "latex",
+    "displayName": "LaTeX (Typst + MathJax fallback)",
+    "description": "Renders math with Typst (preamble.typ injection, inline baseline alignment). Any failing formula falls the whole note back to MathJax.",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 80,
+    "defaultEnabled": true,
+    "defaultOptions": {
+      "renderEngine": "typst"
+    }
+  }
+}

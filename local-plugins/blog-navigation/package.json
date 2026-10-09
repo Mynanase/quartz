@@ -1,0 +1,30 @@
+{
+  "name": "blog-navigation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./components": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "quartz": {
+    "name": "blog-navigation",
+    "displayName": "Blog Navigation",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "defaultEnabled": true,
+    "defaultOptions": {
+      "links": []
+    },
+    "components": {
+      "BlogNavigation": {
+        "displayName": "Blog Navigation",
+        "defaultPosition": "left",
+        "defaultPriority": 50
+      }
+    }
+  }
+}

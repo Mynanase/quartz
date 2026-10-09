@@ -1,0 +1,12 @@
+IBM Plex Math (IBMPlexMath-Regular.otf)
+=========================================
+
+Source: IBM Plex typeface family, https://github.com/IBM/plex
+Local copy taken from TeX Live 2026 (ibm-plex-math package).
+
+License: SIL Open Font License 1.1
+https://openfontlicense.org/open-font-license-official-text/
+
+The OFL permits bundling and redistribution of this font file. The full
+license text is available at the URL above and in the upstream repository
+(IBM/plex: LICENSE.txt).

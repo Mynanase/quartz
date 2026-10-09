@@ -52,14 +52,31 @@ g[class~="typst-text"] {
   text-wrap: pretty;
 }
 
+// typst 公式补偿：New CM hairline 在 1x 屏上抗锯齿后发灰，
+// 用比正文字色更深的填充/描边增强对比（--dark 在暗色模式下自动翻转为更亮的颜色）
+.typst-doc,
+g[class~="typst-text"] {
+  fill: var(--dark);
+}
+
 path[class~="typst-shape"] {
-  stroke: var(--darkgray);
+  stroke: var(--dark);
 }
 
 .math {
   &.math-display {
     text-align: center;
   }
+}
+
+// v4 本地定制：typst display 公式的 flex 居中 + 宽公式横向滚动（上游无此规则，merge 时保留）
+.typst-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+  width: 100%;
+  overflow-x: auto;
 }
 
 article {

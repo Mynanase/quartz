@@ -1,0 +1,20 @@
+{
+  "name": "all-notes-page-list",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "quartz": {
+    "name": "page-list",
+    "displayName": "All Notes (PageList)",
+    "category": "pageType",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "defaultOrder": 50,
+    "defaultEnabled": true,
+    "defaultOptions": {
+      "slug": "all-notes",
+      "title": "All Notes"
+    }
+  }
+}

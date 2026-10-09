@@ -121,8 +121,12 @@ export async function processGoogleFonts(
   processedStylesheet: string
   fontFiles: GoogleFontFile[]
 }> {
+  // 修复（v4 移植）：CJK 字体分片 URL 形如 …/哈希.分片号.woff2（如 k3kCo…S5HE.0.woff2），
+  // 上游正则的 (.+?)[.&] 会丢掉分片号，导致上百个分片写入同名文件互相覆盖
+  // （实测 Noto Sans SC 的 351 个 @font-face 只剩 21 个唯一文件名）。
+  // 现在完整捕获文件名（不含扩展名）；扩展名匹配顺序 woff2 在 ttf/woff 之前。
   const fontSourceRegex =
-    /url\((https:\/\/fonts.gstatic.com\/.+(?:\/|(?:kit=))(.+?)[.&].+?)\)\sformat\('(\w+?)'\);/g
+    /url\((https:\/\/fonts\.gstatic\.com\/[^)]+\/([^)]+?)\.(?:woff2|ttf|woff|otf))\)\s*format\(['"](\w+?)['"]\);/g
   const fontFiles: GoogleFontFile[] = []
   let processedStylesheet = stylesheet
 

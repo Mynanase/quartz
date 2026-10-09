@@ -1,0 +1,11 @@
+Latin Modern Math
+=================
+
+Source: TeX Live (fonts/opentype/public/lm-math/latinmodern-math.otf),
+upstream https://www.gust.org.pl/projects/e-foundry/lm-math
+
+License: GUST Font License (GFL), a BSD-style free license.
+Full text: http://www.gust.org.pl/projects/e-foundry/licenses/GUST-FONT-LICENSE.txt
+
+Used by the math pipeline (local-plugins/latex) via preamble.typ:
+  #show math.equation: set text(font: "Latin Modern Math")

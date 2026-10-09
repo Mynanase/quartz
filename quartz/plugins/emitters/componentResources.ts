@@ -18,9 +18,12 @@ import {
   googleFontSubsetHref,
   joinStyles,
   processGoogleFonts,
+  type GoogleFontFile,
 } from "../../util/theme"
 import { Features, transform } from "lightningcss"
 import { transform as transpile } from "esbuild"
+import { join } from "path"
+import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { write } from "./helpers"
 
 function hashContent(content: string | Buffer): string {
@@ -285,12 +288,20 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
       } else if (cfg.theme.fontOrigin === "googleFonts" && !cfg.theme.cdnCaching) {
         // when cdnCaching is true, we link to google fonts in Head.tsx
         const theme = ctx.cfg.configuration.theme
-        const response = await fetch(googleFontHref(theme))
+        // 现代浏览器 UA（v4 移植）：无 UA 时 Google Fonts 返回整只 TTF（CJK 每字重
+        // 约 6MB）且无 unicode-range 分片；带 Chrome UA 才返回 woff2 按需分片（约 4KB/片）
+        const browserUA =
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+        const response = await fetch(googleFontHref(theme), {
+          headers: { "User-Agent": browserUA },
+        })
         googleFontsStyleSheet = await response.text()
 
         if (theme.typography.title) {
           const title = ctx.cfg.configuration.pageTitle
-          const response = await fetch(googleFontSubsetHref(theme, title))
+          const response = await fetch(googleFontSubsetHref(theme, title), {
+            headers: { "User-Agent": browserUA },
+          })
           googleFontsStyleSheet += `\n${await response.text()}`
         }
 
@@ -306,20 +317,45 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
         )
         googleFontsStyleSheet = processedStylesheet
 
-        // Download and save font files
-        for (const fontFile of fontFiles) {
+        // Download and save font files（v4 移植增强）：
+        // - 持久缓存于 node_modules/.cache/quartz-fonts：`public/` 每次 build 都会被清空、
+        //   serve 热重载也会重跑 emitter，不落缓存则每次 rebuild 都要重新下载全部分片
+        //   （CJK 站点 300+ 片，串行下载实测约 3 分钟）。缓存随分片哈希名自然失效。
+        // - 8 路并行下载：冷启动从 ~3min 缩到十几秒；命中缓存后零网络请求。
+        const cacheDir = join("node_modules", ".cache", "quartz-fonts")
+        await mkdir(cacheDir, { recursive: true })
+
+        const downloadWithCache = async (fontFile: GoogleFontFile): Promise<Buffer> => {
+          const cachePath = join(cacheDir, `${fontFile.filename}.${fontFile.extension}`)
+          try {
+            const cached = await readFile(cachePath)
+            if (cached.length > 0) return cached
+          } catch {
+            // cache miss — fall through to network fetch
+          }
           const res = await fetch(fontFile.url)
           if (!res.ok) {
             throw new Error(`Failed to fetch font ${fontFile.filename}`)
           }
+          const buf = Buffer.from(await res.arrayBuffer())
+          await writeFile(cachePath, buf) // best-effort cache write
+          return buf
+        }
 
-          const buf = await res.arrayBuffer()
-          yield write({
-            ctx,
-            slug: joinSegments("static", "fonts", fontFile.filename) as FullSlug,
-            ext: `.${fontFile.extension}`,
-            content: Buffer.from(buf),
-          })
+        const CONCURRENCY = 8
+        for (let i = 0; i < fontFiles.length; i += CONCURRENCY) {
+          const buffers = await Promise.all(
+            fontFiles.slice(i, i + CONCURRENCY).map((f) => downloadWithCache(f)),
+          )
+          for (const [j, buf] of buffers.entries()) {
+            const fontFile = fontFiles[i + j]!
+            yield write({
+              ctx,
+              slug: joinSegments("static", "fonts", fontFile.filename) as FullSlug,
+              ext: `.${fontFile.extension}`,
+              content: buf,
+            })
+          }
         }
       }
 
@@ -344,6 +380,7 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
         ...globalCss,
         baseStyles,
       )
+
       const stylesheet = `@layer quartz-base {\n${quartzBase}\n}\n${customStyles}`
 
       const prescript = await joinScripts(componentResources.beforeDOMLoaded)

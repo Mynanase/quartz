@@ -1,0 +1,20 @@
+{
+  "name": "tag-page-options",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "quartz": {
+    "name": "tag-page",
+    "displayName": "Tag Page (configured options)",
+    "category": "pageType",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "defaultEnabled": true,
+    "defaultOrder": 40,
+    "defaultOptions": {
+      "numPages": 10,
+      "prefixTags": false
+    }
+  }
+}
