@@ -44,12 +44,12 @@ configuration:
       darkMode:
         light: "#191c21"
         lightgray: "#343b45"
-        gray: "#8b96a3"
-        darkgray: "#cdd3da"
-        dark: "#e8edf2"
-        secondary: "#91b7d3"
-        tertiary: "#91c7b8"
-        highlight: "rgba(145, 183, 211, 0.12)"
+        gray: "#9aa3ae"
+        darkgray: "#e3e3e3"
+        dark: "#f0f2f4"
+        secondary: "#9ec4e0"
+        tertiary: "#a2d4c6"
+        highlight: "rgba(158, 196, 224, 0.12)"
         textHighlight: "#b6983b44"
 plugins:
   - source: "@quartz-community/created-modified-date"

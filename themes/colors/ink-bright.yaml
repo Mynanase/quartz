@@ -1,0 +1,23 @@
+name: "定制 · 墨蓝 · 提亮"
+description: "纸白与石墨灰的 Ink 配色。暗色正文提亮为 #E3E3E3，标题、链接与辅助灰协调调整；背景和边框保持克制。"
+colors:
+  lightMode:
+    light: "#f8f9fa"
+    lightgray: "#dfe4e8"
+    gray: "#737d87"
+    darkgray: "#3f4854"
+    dark: "#252e3a"
+    secondary: "#315d7c"
+    tertiary: "#326f68"
+    highlight: "rgba(49, 93, 124, 0.09)"
+    textHighlight: "#ead39466"
+  darkMode:
+    light: "#191c21"
+    lightgray: "#343b45"
+    gray: "#9aa3ae"
+    darkgray: "#e3e3e3"
+    dark: "#f0f2f4"
+    secondary: "#9ec4e0"
+    tertiary: "#a2d4c6"
+    highlight: "rgba(158, 196, 224, 0.12)"
+    textHighlight: "#b6983b44"

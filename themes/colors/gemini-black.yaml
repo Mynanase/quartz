@@ -1,0 +1,23 @@
+name: "Gemini 风格 · 纯黑对照"
+description: "与 Gemini 深灰方案使用相同文字和交互色，仅将暗色背景改为 #000000，用于比较纯黑与近黑的阅读效果。亮色沿用 Ink。"
+colors:
+  lightMode:
+    light: "#f8f9fa"
+    lightgray: "#dfe4e8"
+    gray: "#737d87"
+    darkgray: "#3f4854"
+    dark: "#252e3a"
+    secondary: "#315d7c"
+    tertiary: "#326f68"
+    highlight: "rgba(49, 93, 124, 0.09)"
+    textHighlight: "#ead39466"
+  darkMode:
+    light: "#000000"
+    lightgray: "#282a2c"
+    gray: "#9aa0a6"
+    darkgray: "#e3e3e3"
+    dark: "#ffffff"
+    secondary: "#8ab4f8"
+    tertiary: "#a8c7fa"
+    highlight: "#1e1f20"
+    textHighlight: "#fdd66333"

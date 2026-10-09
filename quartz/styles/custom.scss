@@ -98,6 +98,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// 暗色阅读层次：日期退后于正文，选区降低底色强度，保留浅色文字的可读性。
+:root[saved-theme="dark"] .content-meta {
+  color: color-mix(in srgb, var(--darkgray) 85%, var(--light));
+}
+
+:root[saved-theme="dark"] ::selection {
+  background: color-mix(in srgb, var(--tertiary) 24%, transparent);
+  color: var(--darkgray);
+}
+
 // 正文 18px，行高随字号缩放。
 .page .center > article {
   font-size: 18px;
@@ -207,7 +217,7 @@ li.section-li > .section {
   --typst-stroke-width: 18;
 }
 
-// Typst 公式颜色跟随正文 --darkgray（当前墨蓝：亮色 #3f4854 / 暗色 #cdd3da）。
+// Typst 公式颜色跟随正文 --darkgray（当前墨蓝：亮色 #3f4854 / 暗色 #e3e3e3）。
 // 用局部字形描边补偿细笔画，避免再叠加 base.scss 中更深的 --dark。
 .typst-doc {
   --glyph_fill: var(--darkgray);

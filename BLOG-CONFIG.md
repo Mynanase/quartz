@@ -26,7 +26,7 @@
 
 ## 配色与调试
 
-当前采用墨蓝。墨蓝、Catppuccin 和原 Quartz 等配色以普通 YAML 文件保存在 [themes/colors/](themes/colors/README.md)。切换时将所选文件的 `colors` 块替换到 `quartz.config.yaml` 的 `configuration.theme.colors`，再运行 `npm run build`。
+当前采用墨蓝提亮版（`ink-bright.yaml`），原版单独保存在 `ink.yaml`。提亮版暗色正文 / 公式为 `#E3E3E3`，标题和蓝绿链接配套提亮，背景仍为 `#191C21`。暗色文章日期的弱化和选区底色强度在 `custom.scss` 中设置。墨蓝、Catppuccin 和原 Quartz 等配色以普通 YAML 文件保存在 [themes/colors/](themes/colors/README.md)。切换时将所选文件的 `colors` 块替换到 `quartz.config.yaml` 的 `configuration.theme.colors`，再运行 `npm run build`。
 
 `npm run palette` 打开独立的本地对比页：<http://127.0.0.1:4175>。调试页读取这些配色文件，浏览器中的试色结果可下载为 YAML 后保存到该目录。将配色文件随仓库提交、推送即可长期备份。
 

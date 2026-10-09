@@ -1,0 +1,23 @@
+name: "Gemini 风格 · 深灰"
+description: "按用户提供的测量色值适配中文长文：暗色背景 #131314、正文 #E3E3E3、白色标题和 Google 浅蓝链接。亮色沿用 Ink；边框和代码底色共用 #282A2C。"
+colors:
+  lightMode:
+    light: "#f8f9fa"
+    lightgray: "#dfe4e8"
+    gray: "#737d87"
+    darkgray: "#3f4854"
+    dark: "#252e3a"
+    secondary: "#315d7c"
+    tertiary: "#326f68"
+    highlight: "rgba(49, 93, 124, 0.09)"
+    textHighlight: "#ead39466"
+  darkMode:
+    light: "#131314"
+    lightgray: "#282a2c"
+    gray: "#9aa0a6"
+    darkgray: "#e3e3e3"
+    dark: "#ffffff"
+    secondary: "#8ab4f8"
+    tertiary: "#a8c7fa"
+    highlight: "#1e1f20"
+    textHighlight: "#fdd66333"
