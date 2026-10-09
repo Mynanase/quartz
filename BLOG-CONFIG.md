@@ -164,6 +164,30 @@ enableToc: true
 
 当前 `defaultDateType: modified` 使用修改日期，影响文章日期、最近更新和 RSS 排序。`updated` 是 `modified` 的别名。`status`、`share` 和 `categories` 本身不控制当前发布行为。
 
+## Cloudflare Worker 发布
+
+博客域名 `blog.qttao.site` 绑定的是 Worker `quartz`；同名 Pages 项目是另一套旧服务。仓库根目录的 `wrangler.json` 沿用 `v4` 设置：上传 `./public`，使用 `404-page` 处理不存在的页面，兼容日期为 `2026-10-01`。
+
+在 Worker 的 Settings → Builds 中设置：
+
+| 设置项       | 值                |
+| ------------ | ----------------- |
+| 仓库         | `Mynanase/quartz` |
+| 生产分支     | `v5`              |
+| 根目录       | `/`               |
+| 构建命令     | `npm run build`   |
+| 部署命令     | `npm run deploy`  |
+| 构建环境变量 | `NODE_VERSION=24` |
+
+`npm run build` 会先执行现有 `prebuild` 钩子安装配置中的插件，再构建博客内容。`npm run deploy` 使用固定版本 Wrangler 读取仓库配置，发布已有构建产物。设置保存后，可在 Web 端触发或重试生产构建。
+
+本地仅验证部署配置，不上传：
+
+```sh
+npm run build
+npm run deploy -- --dry-run
+```
+
 ## 去哪里查完整参数
 
 优先阅读 [docs/plugins/](docs/plugins/) 中对应组件的文档；核对已安装版本时，查 `node_modules/@quartz-community/<插件名>/README.md`。例如 [Explorer README](node_modules/@quartz-community/explorer/README.md) 和 [RecentNotes README](node_modules/@quartz-community/recent-notes/README.md)。

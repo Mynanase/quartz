@@ -6,6 +6,8 @@ Personal Quartz **v5** digital garden (fork of jackyzha0/quartz, origin `Mynanas
 
 ## Commands
 
+- `npm run build` — install configured plugins via `prebuild`, then build blog `content/` into `public/`
+- `npm run deploy` — deploy the built `public/` to Cloudflare Worker `quartz` using `wrangler.json`; use `npm run deploy -- --dry-run` to validate without publishing
 - `npx quartz build --serve` — build + hot-reload dev server over `content/`
 - `npm run docs` — build + serve the documentation site (uses `-d docs`, a different content root)
 - `npm run check` — `tsc --noEmit` + `prettier . --check` (what CI runs; run before pushing)
@@ -35,6 +37,7 @@ Build pipeline (`quartz/build.ts` + `quartz/processors/parse.ts`): glob content 
 
 ## Gotchas
 
+- **Cloudflare Workers**: `blog.qttao.site` is bound to Worker `quartz`, separate from the legacy Pages project of the same name. Root `wrangler.json` preserves the v4 static-assets configuration (`public/`, `404-page`, compatibility date `2026-10-01`). Workers Builds should target branch `v5`, use `npm run build` and `npm run deploy`, with Node 24. Publishing is controlled through the Cloudflare Web dashboard; only push to GitHub unless the user explicitly requests direct deployment.
 - CI workflows are gated on `github.repository == 'jackyzha0/quartz'`, so **CI does not run on this fork** — run `npm run check` and `npm test` locally before pushing.
 - **v5 migration (2026-10)**: this branch tracks upstream `v5` (plugin-package architecture). The v4 line is preserved on the `v4` branch. Config was migrated from v4's `quartz.config.ts`/`quartz.layout.ts` into `quartz.config.yaml`; keep that file (plus `local-plugins/`, `preamble.typ`) when merging upstream.
 - `CustomOgImages` (`@quartz-community/og-image`) emitter significantly slows builds; disable it for fast iteration.
