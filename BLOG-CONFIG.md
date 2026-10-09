@@ -24,6 +24,12 @@
 | 栏目名称和介绍         | 各目录的 `index.md`                                     | frontmatter 的 `title`、`description`，以及正文                      |
 | 首页入口               | [content/index.md](content/index.md)                    | 正文中的栏目链接和订阅链接                                           |
 
+## 配色与调试
+
+当前采用墨蓝。墨蓝、Catppuccin 和原 Quartz 等配色以普通 YAML 文件保存在 [themes/colors/](themes/colors/README.md)。切换时将所选文件的 `colors` 块替换到 `quartz.config.yaml` 的 `configuration.theme.colors`，再运行 `npm run build`。
+
+`npm run palette` 打开独立的本地对比页：<http://127.0.0.1:4175>。调试页读取这些配色文件，浏览器中的试色结果可下载为 YAML 后保存到该目录。将配色文件随仓库提交、推送即可长期备份。
+
 ## 中文字体与 CDN
 
 IBM Plex Sans SC 1.1.0 已通过 `./local-plugins/web-fonts` 接入。400、600、700 三个字重使用 IBM 官方 648 个 `unicode-range` 分片，浏览器只加载页面需要的字符；`font-display: swap` 让正文先使用回退字体显示，本机安装的 IBM Plex Sans SC 仍优先使用。

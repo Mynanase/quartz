@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <script src="/preview.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/font.css" />
+    <link
+      rel="stylesheet"
+      media="print"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono&display=swap"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        background: var(--light);
+        color: var(--darkgray);
+        color-scheme: light;
+      }
+      body {
+        margin: 0;
+        font-family:
+          "IBM Plex Sans", "IBM Plex Sans SC", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      article {
+        max-width: 768px;
+        margin: auto;
+        padding: 32px 24px 72px;
+      }
+      aside {
+        display: none;
+      }
+      aside {
+        font-size: 14px;
+      }
+      .site-title {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 0 0 24px;
+      }
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 28px 0;
+      }
+      .selected {
+        background: var(--highlight);
+        border-left: 3px solid var(--secondary);
+        padding: 8px 12px;
+      }
+      aside h3 {
+        font-size: 16px;
+        color: var(--dark);
+      }
+      .recent {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--lightgray);
+      }
+      .recent small {
+        display: block;
+        margin-top: 6px;
+        opacity: 0.8;
+      }
+      article {
+        min-width: 0;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      article h1 {
+        color: var(--dark);
+        font-size: 1.8em;
+        line-height: 1.3;
+        margin: 12px 0;
+      }
+      article h2 {
+        color: var(--dark);
+        font-size: 1.45em;
+        margin: 32px 0 16px;
+      }
+      article p {
+        margin: 16px 0;
+      }
+      .meta {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+      a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.15s;
+      }
+      a:hover,
+      .hover-example {
+        color: var(--tertiary);
+      }
+      a.internal {
+        background: var(--highlight);
+        border-radius: 5px;
+        padding: 0 0.1rem;
+      }
+      strong {
+        color: var(--dark);
+      }
+      blockquote {
+        margin: 24px 0;
+        border-left: 3px solid var(--secondary);
+        padding: 0 16px;
+      }
+      mark {
+        background: var(--textHighlight);
+        color: var(--darkgray);
+        padding: 0 2px;
+      }
+      code {
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 0.85em;
+        background: var(--lightgray);
+        border-radius: 4px;
+        padding: 2px 5px;
+      }
+      math {
+        font-size: 1em;
+        margin: 24px 0;
+        color: var(--darkgray);
+        overflow-x: auto;
+      }
+      .toc p {
+        margin: 12px 0;
+      }
+      .toc .muted {
+        opacity: 0.6;
+      }
+      .graph {
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--lightgray);
+        border-radius: 5px;
+      }
+      .graph line {
+        stroke: var(--lightgray);
+      }
+      .graph circle {
+        fill: var(--gray);
+      }
+      .graph .active {
+        fill: var(--secondary);
+      }
+      .graph .visited {
+        fill: var(--tertiary);
+      }
+
+      pre {
+        padding: 16px;
+        border: 1px solid var(--lightgray);
+        border-radius: 6px;
+        overflow-x: auto;
+        background: var(--highlight);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      pre code {
+        padding: 0;
+        background: transparent;
+      }
+      .callout {
+        padding: 16px;
+        border: 1px solid var(--secondary);
+        border-left: 4px solid var(--secondary);
+        background: var(--highlight);
+        border-radius: 6px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px 0;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid var(--lightgray);
+      }
+      th {
+        color: var(--dark);
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <div class="meta">Home / Notes / Fluid Mechanics</div>
+      <h1>从局部变化到整体守恒</h1>
+      <div class="meta">Oct 16, 2026 · 8 min read</div>
+      <p>
+        理解一个物理系统，往往从辨认它的尺度开始。我们既关心某一点附近的变化，也关心这些变化如何累积为整体的行为。一个合适的描述，应当让<strong>概念、推导与直觉</strong>之间的联系清楚可见。
+      </p>
+      <p>
+        对于连续介质，可以把质量守恒写成局部的微分形式。它与
+        <a class="internal" href="#reading">散度定理</a> 相互对应，也自然地引出对
+        <a href="#reading">控制体积</a> 的讨论。这里同时保留中文正文、Latin symbols
+        和公式，观察长段落的视觉密度。
+      </p>
+      <math display="block" aria-label="质量守恒方程"
+        ><mrow
+          ><mfrac
+            ><mrow><mo>∂</mo><mi>ρ</mi></mrow
+            ><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac
+          ><mo>+</mo><mi>∇</mi><mo>·</mo><mo>(</mo><mi>ρ</mi><mi mathvariant="bold">v</mi><mo>)</mo
+          ><mo>=</mo><mn>0</mn></mrow
+        ></math
+      >
+      <h2>守恒律与边界</h2>
+      <p>
+        体积内部的积累和边界上的通量必须同时考虑。<mark>边界条件决定我们如何解释这一平衡。</mark>
+        将连续方程离散化时，仍然需要保留相邻单元之间通量抵消的结构。
+      </p>
+      <blockquote><p>把同一个结论写成不同形式，有时比引入一个新的结论更能帮助理解。</p></blockquote>
+      <p>
+        行内代码 <code>divergence(v)</code>、<a class="internal" href="#reading">笔记链接</a>
+        和正文并置时，强调色应当能被辨认，而不抢走段落的注意力。
+      </p>
+      <p>
+        链接状态：<a href="#reading">默认颜色</a> ·
+        <a class="hover-example" href="#reading">悬停颜色示例</a
+        >。鼠标移到其他链接上，也可以比较实际的变化。
+      </p>
+
+      <h2>代码、表格与提示</h2>
+      <pre><code># 相邻控制体共享同一个边界通量
+mass_flux = density * velocity
+residual = divergence(mass_flux)</code></pre>
+      <div class="callout">
+        <strong>阅读提示</strong>
+        <p>同一段文字在不同底色下，会呈现不同的视觉重量。比较正文、链接和标记之间的层次。</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>量</th>
+            <th>符号</th>
+            <th>含义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>密度</td>
+            <td>ρ</td>
+            <td>单位体积的质量</td>
+          </tr>
+          <tr>
+            <td>速度</td>
+            <td>v</td>
+            <td>局部运动状态</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>继续阅读</h2>
+      <p>
+        颜色的选择可以从一个段落开始，但应当在更长的阅读中检验。观察你是否能自然地区分链接、强调和普通正文，以及视线能否平稳地沿着句子移动。
+      </p>
+      <p>
+        “文字清楚”与“颜色鲜明”是两种不同的体验。阅读页面里，背景占据最多的面积；背景和正文的关系决定整体感觉，强调色再帮助读者找到文章中的联系。
+      </p>
+    </article>
+  </body>
+</html>

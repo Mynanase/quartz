@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>配色对比调试 · Quartz</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="heading">
+        <div>
+          <p class="eyebrow">QUARTZ · COLOR STUDIO</p>
+          <h1>配色对比调试</h1>
+        </div>
+        <p id="save-status" role="status" aria-live="polite">正在加载配色…</p>
+      </div>
+      <div class="settings">
+        <label class="page-picker"
+          >阅读内容<select id="content">
+            <option value="sample">阅读样张 · 中文 / 公式 / 代码</option>
+          </select></label
+        >
+        <label
+          >显示<select id="layout">
+            <option value="both">A / B 并排</option>
+            <option value="a">只看 A</option>
+            <option value="b">只看 B</option>
+          </select></label
+        >
+        <label
+          >预览宽度<select id="width">
+            <option value="auto">自适应</option>
+            <option value="720">720px</option>
+            <option value="390">390px · 手机</option>
+            <option value="1440">1440px · 桌面</option>
+          </select></label
+        >
+        <label class="checkbox"><input id="sync" type="checkbox" checked />同步滚动</label>
+        <button id="swap" type="button">交换 A / B</button>
+      </div>
+      <p class="hint" id="content-hint">两侧独立调色，向下展开编辑器。亮暗模式各有一套颜色。</p>
+    </header>
+    <main class="board" id="board" data-layout="both"></main>
+    <footer class="footer">
+      <p>对比度以 4.5:1 为普通文字参考线；用于比较颜色，不代表阅读舒适度排名。</p>
+      <p id="preview-note">
+        阅读样张的公式使用 MathML；选择博客文章可比较已有 Typst / MathJax 输出。
+      </p>
+    </footer>
+    <template id="panel-template">
+      <section class="panel">
+        <div class="panel-heading">
+          <span class="panel-letter"></span>
+          <label class="preset-label">方案<select class="preset"></select></label>
+          <div class="mode-buttons" role="group" aria-label="亮暗模式">
+            <button type="button" data-mode="lightMode">亮色</button
+            ><button type="button" data-mode="darkMode">暗色</button>
+          </div>
+        </div>
+        <div class="summary-colors" aria-label="核心颜色"></div>
+        <div class="viewport"><iframe title="阅读预览"></iframe></div>
+        <div class="contrast-strip"></div>
+        <details class="editor" open>
+          <summary>调整颜色 <span class="edit-badge"></span></summary>
+          <p class="preset-description"></p>
+          <div class="color-grid"></div>
+          <div class="panel-actions">
+            <button class="copy" type="button">复制到另一侧</button>
+            <button class="reset" type="button">重置此方案</button>
+            <button class="download primary" type="button">下载 YAML</button>
+          </div>
+          <details class="yaml-details">
+            <summary>查看完整配置</summary>
+            <pre class="yaml"></pre>
+          </details>
+        </details>
+      </section>
+    </template>
+    <template id="color-template">
+      <div class="color-field">
+        <label class="token-label"></label>
+        <div class="color-inputs">
+          <input class="picker" type="color" /><input
+            class="value"
+            type="text"
+            spellcheck="false"
+            autocomplete="off"
+          />
+        </div>
+        <label class="alpha-label" hidden
+          >透明度 <input class="alpha" type="range" min="0" max="100" /><output></output
+        ></label>
+        <p class="field-error" aria-live="polite"></p>
+      </div>
+    </template>
+  </body>
+</html>

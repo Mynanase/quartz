@@ -16,6 +16,7 @@
     "build": "npx quartz build",
     "deploy": "npx --yes wrangler@4.149.0 deploy",
     "docs": "npx quartz build --serve -d docs",
+    "palette": "node tools/palette-lab/server.mjs",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx --test",

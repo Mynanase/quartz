@@ -1,0 +1,23 @@
+name: "Flexoki · 阅读适配"
+description: "暖纸与墨色。采用 Flexoki 官方色板：正文用 base-800 / base-200，标题用 black / paper，链接用 blue-600 / blue-400，悬停用 cyan-700 / cyan-400。底色透明度为网页适配。来源：stephango.com/flexoki"
+colors:
+  lightMode:
+    light: "#fffcf0"
+    lightgray: "#e6e4d9"
+    gray: "#878580"
+    darkgray: "#403e3c"
+    dark: "#100f0f"
+    secondary: "#205ea6"
+    tertiary: "#1c6c66"
+    highlight: "rgba(32, 94, 166, 0.09)"
+    textHighlight: "#f6e2a080"
+  darkMode:
+    light: "#100f0f"
+    lightgray: "#282726"
+    gray: "#878580"
+    darkgray: "#cecdc3"
+    dark: "#fffcf0"
+    secondary: "#4385be"
+    tertiary: "#3aa99f"
+    highlight: "rgba(67, 133, 190, 0.05)"
+    textHighlight: "#ad830144"

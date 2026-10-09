@@ -1,0 +1,23 @@
+name: "定制 · 墨蓝"
+description: "推荐先比较：接近中性的纸白与石墨灰，墨蓝链接，深青绿悬停。延续研究笔记的克制感，减少背景偏色。全部为定制值。"
+colors:
+  lightMode:
+    light: "#f8f9fa"
+    lightgray: "#dfe4e8"
+    gray: "#737d87"
+    darkgray: "#3f4854"
+    dark: "#252e3a"
+    secondary: "#315d7c"
+    tertiary: "#326f68"
+    highlight: "rgba(49, 93, 124, 0.09)"
+    textHighlight: "#ead39466"
+  darkMode:
+    light: "#191c21"
+    lightgray: "#343b45"
+    gray: "#8b96a3"
+    darkgray: "#cdd3da"
+    dark: "#e8edf2"
+    secondary: "#91b7d3"
+    tertiary: "#91c7b8"
+    highlight: "rgba(145, 183, 211, 0.12)"
+    textHighlight: "#b6983b44"
