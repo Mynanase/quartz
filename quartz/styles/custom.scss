@@ -209,16 +209,15 @@ li.section-li > .section {
   }
 }
 
-// Typst 字形描边补偿：保留 Latin Modern Math 的细笔画，同时稍微增加小字号的可读性。
+// Typst 字形描边补偿：Lete Sans Math 使用原始字形，当前设为 0 关闭附加描边。
 // 宽度以字形局部设计单位（1000upm）计量，并随公式/上下标字号同比缩放。
-// 从 22 调到 16：额外描边减少约 27%，不是将整个字形减细 27%。设为 0 关闭。
 // 只碰 outline_glyph，不覆盖分数线/根号等 typst-shape 自带的 stroke-width。
 :root {
-  --typst-stroke-width: 18;
+  --typst-stroke-width: 0;
 }
 
 // Typst 公式颜色跟随正文 --darkgray（当前墨蓝：亮色 #3f4854 / 暗色 #e3e3e3）。
-// 用局部字形描边补偿细笔画，避免再叠加 base.scss 中更深的 --dark。
+// 填充/描边变量均沿用正文色，避免再叠加 base.scss 中更深的 --dark。
 .typst-doc {
   --glyph_fill: var(--darkgray);
   --glyph_stroke: var(--darkgray);

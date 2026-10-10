@@ -27,9 +27,11 @@ Quartz v5 本地插件：v4 `quartz/plugins/transformers/latex.ts` 的移植，�
 | `.typst-display` flex 居中 + 横向滚动             | `quartz/styles/base.scss`                                  |
 
 配套文件：仓库根目录 `preamble.typ`（缺失时仅 warn 并以空 preamble 编译）；
-`assets/typst-fonts/`（数学字体库，经 `fontArgs.fontPaths` 注入，当前为
-Latin Modern Math（GFL）+ IBM Plex Math（OFL，备选），由 preamble 的
-`set text(font:)` 选用）。
+`assets/typst-fonts/`（数学字体库，经 `fontArgs.fontPaths` 注入，当前选用
+Lete Sans Math 0.63（OFL，Regular / Bold）；Latin Modern Math（GFL）和
+IBM Plex Math（OFL）保留为备选，由 preamble 的 `set text(font:)` 选用）。
+公式为 1em；`quartz/styles/custom.scss` 中的 `--typst-stroke-width: 0` 关闭
+附加字形描边，分数线和根号等形状仍保留原生描边。MathJax 兜底仍使用 CM 风格。
 
 ## 依赖
 
